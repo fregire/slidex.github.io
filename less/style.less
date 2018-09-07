@@ -1,0 +1,36 @@
+@mainFonColor: #323232;
+
+* {
+	box-sizing: border-box;
+}
+
+
+html {
+	-webkit-text-size-adjust:100%;
+    -webkit-tap-highlight-color:transparent;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+	position: relative;
+
+	padding: 0;
+	margin: 0;
+
+	font-family: "Ubuntu", "Open Sans", Arial, sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+	font-style: normal;
+	color: @mainFonColor;
+	line-height: 1.5;
+	word-wrap: break-word;
+}
+
+.visually-hidden {
+	position:absolute;
+    clip:rect(0 0 0 0);
+    width:1px;
+    height:1px;
+    margin:-1px;
+    overflow: hidden;
+}
