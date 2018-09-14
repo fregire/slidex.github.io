@@ -1,9 +1,19 @@
 /* Open Sans Regular */
 @font-face { 
   font-family: 'Open Sans'; 
-  src: url('../fonts/opensans-regular.woff2') format('woff2'), 
-       url('../fonts/opensans-regular.woff') format('woff'); 
+  src: url('../fonts/OpenSans-Regular.woff2') format('woff2'), 
+       url('../fonts/OpenSans-Regular.woff') format('woff'); 
   font-weight: 400; 
+  font-style: normal; 
+  font-display: swap;
+}
+
+/* Open Sans Light */
+@font-face { 
+  font-family: 'Open Sans'; 
+  src: url('../fonts/openSans-oight.woff2') format('woff2'), 
+       url('../fonts/openSans-oight.woff') format('woff'); 
+  font-weight: 300; 
   font-style: normal; 
   font-display: swap;
 }
@@ -11,9 +21,19 @@
 /* Ubuntu Regular */
 @font-face { 
   font-family: 'Ubuntu'; 
-  src: url('../fonts/ubuntu-regular.woff2') format('woff2'), 
-       url('../fonts/ubuntu-regular.woff') format('woff'); 
+  src: url('../fonts/Ubuntu-Regular.woff2') format('woff2'), 
+       url('../fonts/Ubuntu-Regular.woff') format('woff'); 
   font-weight: 400; 
+  font-style: normal; 
+  font-display: swap;
+}
+
+/* Ubuntu Medium */
+@font-face { 
+  font-family: 'Ubuntu'; 
+  src: url('../fonts/Ubuntu-Medium.woff2') format('woff2'), 
+       url('../fonts/Ubuntu-Medium.woff') format('woff'); 
+  font-weight: 500; 
   font-style: normal; 
   font-display: swap;
 }
