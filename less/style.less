@@ -373,3 +373,108 @@ body {
 .about__text--opened:after {
 	display: none;
 }
+
+
+/* Block - unknown */
+.unknown {
+	padding: 60px 0;
+	background: #ffffff;
+}
+
+.unknown__inner {
+	max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;
+
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.unknown__desktop {
+	position: relative;
+	bottom: -20px;
+	right: -30px;
+
+	text-align: right;
+	align-self: flex-end;
+}
+
+.unknown__desktop img {
+	max-width: 100%;
+}
+
+.unknown__content {
+	flex: 1;
+}
+
+.unknown__content-top {
+	padding-left: 50px;
+}
+
+.unknown__headline {
+	position: relative;
+}
+
+.unknown__headline:after {
+	position: absolute;
+	top: 100%;
+	left: 0;
+
+	display: block;
+	content: "";
+	width: 330px;
+	height: 2px;
+
+	background: #B8B8B8;
+}
+
+.unknown__items {
+	list-style: none;
+	padding: 0;
+	margin: 20px 0 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.unknown__item {
+	width: 50%;
+	padding-top: 30px;
+	padding-left: 50px;
+	margin-bottom: 10px;
+	background-repeat: no-repeat;
+	background-image: url(../img/Pdf.png);
+}
+
+.unknown__item-headline {
+	margin-bottom: 5px;
+	margin-top: 0;
+
+	color: @headlineColor;
+	font-size: 18px;
+}
+
+.unknown__item-descr {
+	margin: 0;
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 14px;
+	color: #6f6f6f;	
+
+	transition-delay: .2s;
+
+}
+
+.unknown__item-descr,
+.unknown__item-headline {
+	transform: translateY(15px);
+	opacity: 0;
+	transition: opacity .8s ease,transform .8s ease;
+}
+
+
+.unknown__item--visible:nth-child(2n - 1) .unknown__item-descr,
+.unknown__item--visible:nth-child(2n - 1) .unknown__item-headline,
+.unknown__item--visible:nth-child(2n) .unknown__item-descr,
+.unknown__item--visible:nth-child(2n) .unknown__item-headline {
+	opacity: 1;
+	transform: translateY(0);
+}

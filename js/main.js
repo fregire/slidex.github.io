@@ -17,5 +17,20 @@ $(document).ready(function(){
 
 	$(".about__text").click(function(){
 		$(this).toggleClass("about__text--opened");
-	})
+	});
+
+
+	var screenHeight = screen.height;
+	$(window).scroll(function(){
+		var topBorderElems = document.querySelectorAll(".unknown__item");
+		var elemTopPosition;
+		for(var i = 0; i < topBorderElems.length; i++){
+			elemTopPosition = topBorderElems[i].getBoundingClientRect().top;
+			if(elemTopPosition > screenHeight - 100){
+				continue;
+			} else {
+				topBorderElems[i].classList.add("unknown__item--visible");
+			}
+		}
+	});
 });
