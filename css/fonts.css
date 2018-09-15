@@ -11,8 +11,8 @@
 /* Open Sans Light */
 @font-face { 
   font-family: 'Open Sans'; 
-  src: url('../fonts/openSans-oight.woff2') format('woff2'), 
-       url('../fonts/openSans-oight.woff') format('woff'); 
+  src: url('../fonts/openSans-Light.woff2') format('woff2'), 
+       url('../fonts/openSans-Light.woff') format('woff'); 
   font-weight: 300; 
   font-style: normal; 
   font-display: swap;

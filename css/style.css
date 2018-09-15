@@ -423,6 +423,7 @@ body {
   margin-top: 0;
   color: #191919;
   font-size: 18px;
+  font-weight: 500;
 }
 .unknown__item-descr {
   margin: 0;
@@ -453,4 +454,103 @@ body {
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0);
+}
+/* Block - steps */
+.steps {
+  padding: 60px 0;
+  background: #283140;
+}
+.steps__inner {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.steps__call-to-action {
+  padding-left: 50px;
+  max-width: 250px;
+  margin-right: 30px;
+}
+.steps__headline {
+  margin-bottom: 30px;
+  margin-top: 0;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+}
+.steps__btn {
+  margin-top: 30px;
+}
+.steps__line {
+  height: 2px;
+  width: 70px;
+  background: #fff;
+}
+.steps__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.steps__item {
+  width: 50%;
+  padding-top: 10px;
+  padding-left: 25px;
+  background-repeat: no-repeat;
+  background-image: url(../img/Связаться.png);
+}
+.steps__item:first-child,
+.steps__item:nth-child(2) {
+  margin-bottom: 15px;
+}
+.steps__item-headline {
+  margin-bottom: 5px;
+  margin-top: 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+.steps__item-descr {
+  margin: 0;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 14px;
+  color: #b8b8b8;
+}
+.steps__notification {
+  position: relative;
+  width: 285px;
+  padding: 75px 25px 45px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  font-size: 14px;
+  font-family: "Open Sans", Arial, sans-serif;
+  border-radius: 10px;
+  background: #fff url(../img/информация.png) no-repeat 23px 30px;
+  opacity: 0;
+  -webkit-transition: opacity 1.5s;
+  -o-transition: opacity 1.5s;
+  transition: opacity 1.5s;
+}
+.steps__notification--visible {
+  opacity: 1;
+}
+.steps__notification hr {
+  width: 160px;
+  height: 2px;
+  margin-left: 0;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  background: #323232;
+}
+.steps__notification p {
+  margin: 0;
 }

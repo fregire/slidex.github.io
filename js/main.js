@@ -15,6 +15,7 @@ $(document).ready(function(){
 		}
 	});
 
+	// Раскритие текста по клику
 	$(".about__text").click(function(){
 		$(this).toggleClass("about__text--opened");
 	});
@@ -28,5 +29,9 @@ $(document).ready(function(){
 				topBorderElems[i].classList.add("unknown__item--visible");
 			}
 		}
+
+		if(isVisible(document.querySelector(".steps__inner"), screenHeight)){
+			$(".steps__notification").addClass("steps__notification--visible");
+		} 
 	});
 });
