@@ -554,3 +554,96 @@ body {
 .steps__notification p {
   margin: 0;
 }
+/* Block - prices */
+.prices {
+  padding: 60px 0;
+  background: url(../img/prices_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.prices__inner {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.prices__list {
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style: none;
+}
+.prices__item {
+  position: relative;
+  width: 260px;
+  padding: 40px 25px 23px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-box-shadow: 0px 0px 24.57px 2.43px rgba(40, 80, 229, 0.41);
+          box-shadow: 0px 0px 24.57px 2.43px rgba(40, 80, 229, 0.41);
+  border-radius: 5px;
+  -webkit-transition: all 400ms;
+  -o-transition: all 400ms;
+  transition: all 400ms;
+}
+.prices__item:after {
+  position: absolute;
+  top: -7px;
+  right: 15px;
+  display: block;
+  width: 44px;
+  height: 30px;
+  content: "";
+  background: url(../img/Иконка1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+.prices__item:hover {
+  background: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.prices__item:hover:after {
+  opacity: 1;
+}
+.prices__name {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 30px;
+  color: #191919;
+  font-weight: 500;
+}
+.prices__services {
+  padding: 0;
+  margin: 0 0 35px;
+  font-family: "Open Sans", Arial, sans-serif;
+  color: #5f5f5f;
+  list-style: none;
+}
+.prices__price {
+  margin-top: auto;
+  margin-bottom: 35px;
+  font-size: 25px;
+  color: #191919;
+  font-weight: 500;
+}
+.prices__price span {
+  font-family: "Open Sans", Arial, sans-serif;
+  color: #b9b9b9;
+  font-size: 18px;
+}
