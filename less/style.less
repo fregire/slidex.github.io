@@ -779,3 +779,99 @@ body {
 .feedback__politic-warning a {
 	color: @mainFontColor;
 }
+
+/* Block - page-footer */
+.page-footer {
+	padding: 40px 0;
+
+	background: #283140;
+}
+
+.page-footer__inner {
+	max-width: 1200px;
+	padding: 0 15px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.page-footer__left-side {
+	max-width: 750px;
+}
+
+.page-footer__cookie-text,
+.page-footer__cookie-text a {
+	color: #d3d3d3;
+}
+
+.page-footer__cookie-text {
+	margin-top: 0;
+	
+	font-size: 12px;
+	line-height: 1.4;
+	font-weight: 500;
+}
+
+.page-footer__email-link {
+	margin-top: 30px;
+}
+
+.page-footer__email-link a {
+	color: #fff;
+	font-style: normal;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.page-footer__right-side {
+	width: 225px;
+}
+
+.page-footer__logo {
+	display: block;
+}
+
+.page-footer__line {
+	margin: 30px 0;
+	width: 80px;
+	height: 2px;
+
+	background: #fff;
+}
+
+.page-footer__social {
+	padding: 0;
+	margin: 0 -15px;
+}
+/* Block - social-list */
+.social-list {
+	display: flex;
+	justify-content: space-between;
+
+	list-style: none;
+}
+
+.social-list__item {
+	margin: 0 15px;
+}
+
+.social-list__link {
+	position: relative;
+
+	display: block;
+}
+
+.social-list__link:hover .social-list__img-hover {
+	opacity: 1;
+}
+
+.social-list__img-hover {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	opacity: 0;
+
+	transition: opacity .2s;
+}
