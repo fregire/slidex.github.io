@@ -34,4 +34,45 @@ $(document).ready(function(){
 			$(".steps__notification").addClass("steps__notification--visible");
 		} 
 	});
+
+	// Активация и настройка слайдеров slick
+	$(".project__picts-list").slick({
+		vertical: true,
+		slidesToShow: 2,
+		adaptiveHeight: true,
+		dots: false,
+		arrows: false,
+		asNavFor: ".project__main-pict",
+		draggable: false,
+		focusOnSelect: true
+	});
+
+	$(".project__main-pict").slick({
+		slidesToShow: 1,
+		prevArrow: "<button class='project__main-pict-arrow project__main-pict-prev' title='Предыдущая картинка'></button>",
+		nextArrow: "<button class='project__main-pict-arrow project__main-pict-next' title='Следующая картинка'></button>",
+		asNavFor: ".project__picts-list"
+	});
+
+	$(".examples__list").slick({
+		slidesToShow: 1,
+		fade: true,
+		prevArrow: "<button class='examples__arrow examples__arrow-prev' title='Предыдущая картинка'></button>",
+		nextArrow: 
+		"<button class='examples__arrow examples__arrow-next' title='Следующая картинка'></button>" +
+		"<span class='examples__counter'><span class='examples__counter-current'>1</span> из <span class='examples__counter-all'>10</span></span>",
+		draggable: false
+	});
+
+	$(".examples__counter-all").text($(".examples__list").attr("data-amount"));
+	var isFirstTime = false;
+	var nextIndex;
+	$(".examples__list").on("afterChange", function(slick, currentSlide, index){
+		$(".examples__counter-current").text(++index);
+	});
+
+	$(".examples__arrow").click(function(){
+		$(".examples__arrow").removeClass("examples__arrow--active");
+		$(this).addClass("examples__arrow--active");
+	})
 });
