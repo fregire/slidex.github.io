@@ -263,10 +263,12 @@ body {
   list-style: none;
 }
 .projects__item {
+  border: 2px solid #E5E5E5;
+}
+.projects__item div {
   position: relative;
   height: 67px;
   width: 190px;
-  border: 2px solid #E5E5E5;
   text-align: center;
 }
 .projects__project-logo {

@@ -64,6 +64,23 @@ $(document).ready(function(){
 		draggable: false
 	});
 
+	$(".projects__item").slick({
+		slidesToShow: 1,
+		fade: true,
+		arrows: false
+	});
+
+	var timer = setInterval(function(){
+		var duration = 1000; //'slow'
+		$(".projects__item").each(function(index) {
+			console.log($(this));
+		    $(this).delay(duration * index).slick("slickNext");
+		});		
+		clearInterval(timer);
+	}, 8000);
+
+
+
 	$(".examples__counter-all").text($(".examples__list").attr("data-amount"));
 	var isFirstTime = false;
 	var nextIndex;
