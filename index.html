@@ -23,8 +23,8 @@
 		<div class="page-header__main-block">
 			<h1 class="page-header__headline">Презентация для торгового центра</h1>
 			<p class="page-header__descr">Помогаем получить торговое место в крупных торговых центрах. Создание презентации магазина, торговой точки, салона, кафе для ТЦ.</p>
-			<button class="page-header__btn btn btn--size-lg btn--theme-action" >Заказать презентацию для ТЦ</button>
-			<a class="btn btn--size-md btn--theme-anchor" href="">Смотреть примеры</a>
+			<button class="page-header__btn btn btn--size-lg btn--theme-action js-open-popup" >Заказать презентацию для ТЦ</button>
+			<a class="btn btn--size-md btn--theme-anchor js-to-examples" href="#examples">Смотреть примеры</a>
 		</div>
 	</header>
 	<main class="page-main">
@@ -133,7 +133,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="examples">
+		<section class="examples" id="examples">
 			<div class="examples__inner">
 				<div class="examples__list" data-amount="3">
 					<div class="examples__item project">
@@ -283,7 +283,7 @@
 						</div>
 						<input type="text" class="field field--full-width" placeholder="Комментарий">
 						<div class="feedback__send-group">
-							<input type="submit" class="feedback__btn btn btn--size-md btn--theme-action" value="Оставить заявку"> 
+							<button type="submit" class="feedback__btn btn btn--size-md btn--theme-action">Оставить заявку</button>
 							<span class="feedback__politic-warning">Нажимая «Оставить заявку», Вы принимаете условия <a href="#">политики конфиденциальности</a></span>							
 						</div>
 					</form>
@@ -338,7 +338,22 @@
 			</div>
 		</div>
 	</footer>
-	
+	<div class="modal">
+		<div class="modal__window">
+			<h2 class="modal__headline headline">Звоните по номеру +8 (800) 303 10 63 или оставьте ваши контакты</h2>
+			<p class="modal__descr">Презентация магййазина для арендодателя представляет собой емкий рассказ о вашем бизнесе, выполненный в</p>
+			<form action="#" class="modal__form">
+				<div class="modal__form-group">
+					<div>
+						<input type="text" required name="user_name" class="field modal__field" placeholder="Представьтесь, пожалуйста*">
+						<input type="text" class="field modal__field" placeholder="Ваш телефон*">
+					</div>
+				</div>
+				<button class="modal__submit-btn btn btn--size-md btn--theme-action" type="submit" data-send="false">Далее</button>
+			</form>
+			<button class="modal__close" title="Закрыть окно"></button>
+		</div>
+	</div>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/slick.min.js"></script>
 	<script src="js/main.js"></script>

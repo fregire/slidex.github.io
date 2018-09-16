@@ -74,5 +74,36 @@ $(document).ready(function(){
 	$(".examples__arrow").click(function(){
 		$(".examples__arrow").removeClass("examples__arrow--active");
 		$(this).addClass("examples__arrow--active");
-	})
+	});
+
+	var path;
+	$(".js-to-examples").click(function(e){
+		e.preventDefault();
+
+		path = $(this).attr("href");
+		$('html, body').animate({ scrollTop: $(path).offset().top }, 500); 
+
+	});
+
+
+	$(".js-open-popup").click(function(){
+		$(".modal").fadeIn();
+	});
+
+	$(".modal__close").click(function(){
+		$(".modal").fadeOut();
+	});
+
+	$(".modal__form").submit(function(e){
+		e.preventDefault();
+		if($(".modal__submit-btn").attr('data-send') === "false"){
+			if($(".modal__field[name='user_name']").val() != ""){
+				$(".modal__submit-btn").attr("data-send", "true");
+				$(".modal__submit-btn").text("Заказать");
+				$(".modal__form-group div").css("transform", "translateX(-270px)");
+			}
+		} else {
+			//Ajax
+		}
+	});
 });
