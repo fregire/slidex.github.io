@@ -129,6 +129,20 @@ body {
   -webkit-transform: translate3d(120%, -100px, 0) rotate3d(0, 0, 1, 90deg);
           transform: translate3d(120%, -100px, 0) rotate3d(0, 0, 1, 90deg);
 }
+/* Block - input */
+.field {
+  padding: 10px 1px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #9E9F9F;
+  outline: none;
+}
+.field:focus {
+  border-bottom-color: #323232;
+}
+.field--full-width {
+  width: 100%;
+}
 /* Block - headline */
 .headline {
   color: #191919;
@@ -136,6 +150,7 @@ body {
   line-height: 1.5;
   font-weight: 500;
 }
+/* Block - link */
 /* Block - page-header */
 .page-header {
   padding-bottom: 130px;
@@ -646,4 +661,58 @@ body {
   font-family: "Open Sans", Arial, sans-serif;
   color: #b9b9b9;
   font-size: 18px;
+}
+/* Block - feedback */
+.feedback {
+  padding: 100px 0;
+  background: url(../img/Нига.png) no-repeat 6.2% bottom;
+}
+.feedback__inner {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.feedback__block {
+  margin-left: auto;
+  max-width: 560px;
+}
+.feedback__headline {
+  margin-bottom: 0;
+}
+.feedback__descr {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+.feedback__fields-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.feedback__field {
+  width: 270px;
+  margin-bottom: 20px;
+}
+.feedback__send-group {
+  margin-top: 50px;
+}
+.feedback__btn {
+  vertical-align: top;
+}
+.feedback__politic-warning {
+  display: inline-block;
+  max-width: 220px;
+  margin-left: 30px;
+  line-height: 1;
+  color: #323232;
+  font-weight: 500;
+  font-size: 14px;
+}
+.feedback__politic-warning,
+.feedback__politic-warning a {
+  color: #323232;
 }
