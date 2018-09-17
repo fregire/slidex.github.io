@@ -77,13 +77,12 @@ $(document).ready(function(){
 		    $(this).delay(duration * index).slick("slickNext");
 		});		
 		clearInterval(timer);
-	}, 8000);
+	}, 6000);
 
 
 
 	$(".examples__counter-all").text($(".examples__list").attr("data-amount"));
-	var isFirstTime = false;
-	var nextIndex;
+
 	$(".examples__list").on("afterChange", function(slick, currentSlide, index){
 		$(".examples__counter-current").text(++index);
 	});
@@ -102,25 +101,63 @@ $(document).ready(function(){
 
 	});
 
+	var UserRegExp = {
+		PHONE: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
+		NAME: /^[а-яА-ЯёЁa-zA-Z0-9]+$/
+	}
+	var $userNameField = $(".modal__field[name='user_name']");
+	var $userPhoneField = $(".modal__field[name='user_phone']");
+	var $modalSubmitBtn = $(".modal__submit-btn");
+	var isReadyToSend = false;
 
+	$(".modal__form").submit(function(e){	
+		e.preventDefault();
+
+		if($(".modal__submit-btn").is("[data-is-last-field='true']")){
+			if(UserRegExp.PHONE.test($userPhoneField.val())){
+				$userPhoneField.removeClass("field--error");
+				$modalSubmitBtn.text("Заказать");
+			} else {
+				$userPhoneField.addClass("field--error");
+			}
+		} else {
+			if(UserRegExp.NAME.test($userNameField.val())){
+				// Переход к другому полю и фокус на него
+				$(".modal__form-group div").css("transform", "translateX(-270px)");
+				$userPhoneField.focus();
+
+				$userNameField.removeClass("field--error");
+				$modalSubmitBtn.text("Заказать");
+				$modalSubmitBtn.attr("data-is-last-field", "true");
+				isReadyToSend = true;
+			} else {
+				$userNameField.addClass("field--error");
+			}			
+		}
+
+		if(isReadyToSend){
+			$.ajax({
+				// TODO: Отправка на почту средствами Ajax
+			});
+		}
+
+
+
+	});
+
+	// TODO: Сделать при открытии окна проверку на наличие
+	// атрибута тарифа и если таков есть, то записывать в hidden input
 	$(".js-open-popup").click(function(){
 		$(".modal").fadeIn();
 	});
 
 	$(".modal__close").click(function(){
+		// Закрытие окна и очищение данных форм
 		$(".modal").fadeOut();
-	});
-
-	$(".modal__form").submit(function(e){
-		e.preventDefault();
-		if($(".modal__submit-btn").attr('data-send') === "false"){
-			if($(".modal__field[name='user_name']").val() != ""){
-				$(".modal__submit-btn").attr("data-send", "true");
-				$(".modal__submit-btn").text("Заказать");
-				$(".modal__form-group div").css("transform", "translateX(-270px)");
-			}
-		} else {
-			//Ajax
-		}
+		$(".modal__field").val("");
+		$(".modal__form-group div").removeAttr("style");
+		$(".modal__field").removeClass("field--error");
+		$modalSubmitBtn.text("Далее");
+		$modalSubmitBtn.attr("data-is-last-field", "false");
 	});
 });

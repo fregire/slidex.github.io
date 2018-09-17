@@ -366,10 +366,11 @@
 				<div class="modal__form-group">
 					<div>
 						<input type="text" required name="user_name" class="field modal__field" placeholder="Представьтесь, пожалуйста*">
-						<input type="text" class="field modal__field" placeholder="Ваш телефон*">
+						<input type="text" name="user_phone" class="field modal__field" placeholder="Ваш телефон*">
 					</div>
+					<input type="hidden" value="null" name="tariff">
 				</div>
-				<button class="modal__submit-btn btn btn--size-md btn--theme-action" type="submit" data-send="false">Далее</button>
+				<button class="modal__submit-btn btn btn--size-md btn--theme-action" type="submit" data-is-last-field="false">Далее</button>
 			</form>
 			<button class="modal__close" title="Закрыть окно"></button>
 		</div>

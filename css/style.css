@@ -144,6 +144,9 @@ body {
 .field--full-width {
   width: 100%;
 }
+.field--error {
+  border-bottom-color: #ff2400;
+}
 /* Block - headline */
 .headline {
   color: #191919;
