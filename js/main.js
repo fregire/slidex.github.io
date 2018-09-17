@@ -101,6 +101,7 @@ $(document).ready(function(){
 
 	});
 
+	// Перечисления регулярок для проверки форм
 	var UserRegExp = {
 		PHONE: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
 		NAME: /^[а-яА-ЯёЁa-zA-Z0-9]+$/
@@ -113,6 +114,9 @@ $(document).ready(function(){
 	$(".modal__form").submit(function(e){	
 		e.preventDefault();
 
+		// Если это последнее поле, значит это поле с телефоном и
+		// проверка идет уже поля с Телефоном
+		// Иначе идет проверка поля с Именем пользователя
 		if($(".modal__submit-btn").is("[data-is-last-field='true']")){
 			if(UserRegExp.PHONE.test($userPhoneField.val())){
 				$userPhoneField.removeClass("field--error");
