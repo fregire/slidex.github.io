@@ -1,4 +1,9 @@
 $(document).ready(function(){
+
+	// Проверка на наличие атрибута элемента 
+	$.fn.hasAttr = function(name) {  
+	   return this.attr(name) !== undefined;
+	};
 	var screenHeight = screen.height;
 	// Функция - видим ли элемент при скролле вниз
 	function isVisible(elem, screenHeight){
@@ -101,13 +106,17 @@ $(document).ready(function(){
 
 	});
 
+	// При загрузке страницы если нет Js, то будут 
+	// использоваться встроенные средства проверки html5 форм
+	// иначе с помощью js
+	$("input").removeAttr("pattern");
 	// Перечисления регулярок для проверки форм
 	var UserRegExp = {
-		PHONE: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
+		PHONE: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/,
 		NAME: /^[а-яА-ЯёЁa-zA-Z0-9]+$/
 	}
-	var $userNameField = $(".modal__field[name='user_name']");
-	var $userPhoneField = $(".modal__field[name='user_phone']");
+	var $modalUserNameField = $(".modal__field[name='user_name']");
+	var $modalUserPhoneField = $(".modal__field[name='user_phone']");
 	var $modalSubmitBtn = $(".modal__submit-btn");
 	var isReadyToSend = false;
 
@@ -118,24 +127,24 @@ $(document).ready(function(){
 		// проверка идет уже поля с Телефоном
 		// Иначе идет проверка поля с Именем пользователя
 		if($(".modal__submit-btn").is("[data-is-last-field='true']")){
-			if(UserRegExp.PHONE.test($userPhoneField.val())){
-				$userPhoneField.removeClass("field--error");
-				$modalSubmitBtn.text("Заказать");
+			if(UserRegExp.PHONE.test($modalUserPhoneField.val())){
+				$modalUserPhoneField.removeClass("field--error");
 			} else {
-				$userPhoneField.addClass("field--error");
+				$modalUserPhoneField.addClass("field--error");
+				alert("yes");
 			}
 		} else {
-			if(UserRegExp.NAME.test($userNameField.val())){
+			if(UserRegExp.NAME.test($modalUserNameField.val())){
 				// Переход к другому полю и фокус на него
 				$(".modal__form-group div").css("transform", "translateX(-270px)");
-				$userPhoneField.focus();
+				$modalUserPhoneField.focus();
 
-				$userNameField.removeClass("field--error");
+				$modalUserNameField.removeClass("field--error");
 				$modalSubmitBtn.text("Заказать");
 				$modalSubmitBtn.attr("data-is-last-field", "true");
 				isReadyToSend = true;
 			} else {
-				$userNameField.addClass("field--error");
+				$modalUserNameField.addClass("field--error");
 			}			
 		}
 
@@ -149,13 +158,43 @@ $(document).ready(function(){
 
 	});
 
-	// TODO: Сделать при открытии окна проверку на наличие
-	// атрибута тарифа и если таков есть, то записывать в hidden input
+	var $userNameField = $(".feedback__field[name='user_name']");
+	var $userPhoneField = $(".feedback__field[name='user_phone']");
+	var $userCommentField = $(".feedback__field[name='user_comment']");
+	isReadyToSend = false;
+
+	// Проверка Валидации формы на странице(не попап)
+	$(".feedback__form").submit(function(e){
+		e.preventDefault();
+		if(!UserRegExp.NAME.test($userNameField.val())){
+			$userNameField.addClass("field--error");
+		} else {
+			$userNameField.removeClass("field--error");
+		}
+
+		if(!UserRegExp.PHONE.test($userPhoneField.val())){
+			$userPhoneField.addClass("field--error");
+		} else {
+			$userPhoneField.removeClass("field--error");
+		}
+		
+		// Если не найдено ни одного поля с ошибкой, то можно отправлять
+		if(!$(".field").is(".field--error")){
+			// Ajax
+		}
+	});
+
 	$(".js-open-popup").click(function(){
 		$(".modal").fadeIn();
+		$("html").addClass("popup-opened");
+		// Запись тарифа в скрытый инпут
+		if($(this).hasAttr("data-tariff")){
+			$("input[name='user_tariff']").val($(this).attr("data-tariff"));
+		}
 	});
 
 	$(".modal__close").click(function(){
+		$("html").removeClass("popup-opened");
 		// Закрытие окна и очищение данных форм
 		$(".modal").fadeOut();
 		$(".modal__field").val("");

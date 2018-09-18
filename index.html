@@ -126,7 +126,7 @@
 				<div class="steps__call-to-action">
 					<h2 class="steps__headline">Вы обратились по адресу</h2>
 					<div class="steps__line"></div>
-					<button class="steps__btn btn btn--size-md btn--theme-action">Оставить заявку</button>
+					<button class="steps__btn btn btn--size-md btn--theme-action js-open-popup">Оставить заявку</button>
 				</div>
 				<ul class="steps__items">
 					<li class="steps__item">
@@ -255,7 +255,7 @@
 							<li class="prices__service-item">Разработка дизайна</li>
 						</ul>
 						<p class="prices__price">9 900<span>/руб</span></p>
-						<button class="prices__btn btn btn--size-md btn--theme-action">Заказать</button>
+						<button class="prices__btn btn btn--size-md btn--theme-action js-open-popup" data-tariff="Базовый">Заказать</button>
 					</li>
 					<li class="prices__item">
 						<h3 class="prices__name">Продвинутый</h3>
@@ -266,7 +266,7 @@
 							<li class="prices__service-item">Разработка дизайна</li>
 						</ul>
 						<p class="prices__price">9 900<span>/руб</span></p>
-						<button class="prices__btn btn btn--size-md btn--theme-action">Заказать</button>
+						<button class="prices__btn btn btn--size-md btn--theme-action js-open-popup" data-tariff="Продвинутый">Заказать</button>
 					</li>
 					<li class="prices__item">
 						<h3 class="prices__name">Премиум</h3>
@@ -278,7 +278,7 @@
 							<li class="prices__service-item">3D визуализация островка/торговой точи</li>
 						</ul>
 						<p class="prices__price">9 900<span>/руб</span></p>
-						<button class="prices__btn btn btn--size-md btn--theme-action">Заказать</button>
+						<button class="prices__btn btn btn--size-md btn--theme-action js-open-popup" data-tariff="Премиум">Заказать</button>
 					</li>
 					<li class="prices__item">
 						<h3 class="prices__name">Универсал</h3>
@@ -286,7 +286,7 @@
 							<li class="prices__service-item">Презентация магазина для арендодателя представляет собой емкий рассказ о вашем бизнесе, выполненный в слайдах.</li>
 						</ul>
 						<p class="prices__price">9 900<span>/руб</span></p>
-						<button class="prices__btn btn btn--size-md btn--theme-action">Рассчитать стоимость</button>
+						<button class="prices__btn btn btn--size-md btn--theme-action js-open-popup" data-tariff="Рассчитать стоимость">Рассчитать стоимость</button>
 					</li>
 				</ul>
 			</div>
@@ -298,10 +298,31 @@
 					<p class="feedback__descr">Презентация магййазина для арендодателя представляет собой емкий рассказ о вашем бизнесе, выполненный в слайдах.</p>
 					<form action="#" class="feedback__form">
 						<div class="feedback__fields-group">
-							<input type="text" class="feedback__field field" placeholder="Представьтесь*">
-							<input type="text" class="feedback__field field" placeholder="Телефон*">							
+							<input 
+								type="text" 
+								name="user_name" 
+								class="feedback__field field" 
+								placeholder="Представьтесь*" 
+								required
+								pattern="^[а-яА-ЯёЁa-zA-Z0-9]+$" 
+								autocomplete="name">
+							<input 
+								type="tel" 
+								inputmode="numeric"
+								name="user_phone" 
+								class="feedback__field field"
+								placeholder="Телефон*" 
+								required
+								pattern="^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$"
+								autocomplete="tel">
 						</div>
-						<input type="text" class="field field--full-width" placeholder="Комментарий">
+						<input 
+							type="text" 
+							name="user_comment" 
+							class="field field--full-width" 
+							placeholder="Комментарий"
+							autocomplete="off" 
+							autocorrect="off">
 						<div class="feedback__send-group">
 							<button type="submit" class="feedback__btn btn btn--size-md btn--theme-action">Оставить заявку</button>
 							<span class="feedback__politic-warning">Нажимая «Оставить заявку», Вы принимаете условия <a href="#">политики конфиденциальности</a></span>							
@@ -365,10 +386,24 @@
 			<form action="#" class="modal__form">
 				<div class="modal__form-group">
 					<div>
-						<input type="text" required name="user_name" class="field modal__field" placeholder="Представьтесь, пожалуйста*">
-						<input type="text" name="user_phone" class="field modal__field" placeholder="Ваш телефон*">
+						<input 
+							type="text" 
+							required 
+							name="user_name" 
+							class="field modal__field" 
+							placeholder="Представьтесь, пожалуйста*"
+							pattern="^[а-яА-ЯёЁa-zA-Z0-9]+$"
+							autocomplete="name">
+						<input 
+							type="tel" 
+							inputmode="numeric"
+							name="user_phone" 
+							class="field modal__field" 
+							placeholder="Ваш телефон*"
+							pattern="^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$"
+							autocomplete="tel">
 					</div>
-					<input type="hidden" value="null" name="tariff">
+					<input type="hidden" value="null" name="user_tariff">
 				</div>
 				<button class="modal__submit-btn btn btn--size-md btn--theme-action" type="submit" data-is-last-field="false">Далее</button>
 			</form>
