@@ -78,7 +78,6 @@ $(document).ready(function(){
 	var timer = setInterval(function(){
 		var duration = 1000; //'slow'
 		$(".projects__item").each(function(index) {
-			console.log($(this));
 		    $(this).delay(duration * index).slick("slickNext");
 		});		
 		clearInterval(timer);
@@ -88,8 +87,11 @@ $(document).ready(function(){
 
 	$(".examples__counter-all").text($(".examples__list").attr("data-amount"));
 
-	$(".examples__list").on("afterChange", function(slick, currentSlide, index){
-		$(".examples__counter-current").text(++index);
+	$(".examples__arrow").click(function(){
+		// Счетчик текущей работы в слайдере
+		var $slide = $(".slick-slide.slick-current.slick-active");
+		var currentIndex = parseInt($($slide[$slide.length - 1]).attr("data-slick-index"));
+		$(".examples__counter-current").text(++currentIndex);
 	});
 
 	$(".examples__arrow").click(function(){
