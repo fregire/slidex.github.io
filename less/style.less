@@ -406,13 +406,13 @@ body {
 }
 
 
-/* Block - unknown */
-.unknown {
+/* Block - facts */
+.facts {
 	padding: 60px 0;
 	background: #ffffff;
 }
 
-.unknown__inner {
+.facts__inner {
 	max-width: 1200px;
 	padding: 0 15px;
 	margin: 0 auto;
@@ -421,7 +421,7 @@ body {
 	flex-wrap: wrap;
 }
 
-.unknown__desktop {
+.facts__desktop {
 	position: relative;
 	bottom: -20px;
 	right: -30px;
@@ -430,23 +430,23 @@ body {
 	align-self: flex-end;
 }
 
-.unknown__desktop img {
+.facts__desktop img {
 	max-width: 100%;
 }
 
-.unknown__content {
+.facts__content {
 	flex: 1;
 }
 
-.unknown__content-top {
+.facts__content-top {
 	padding-left: 50px;
 }
 
-.unknown__headline {
+.facts__headline {
 	position: relative;
 }
 
-.unknown__headline:after {
+.facts__headline:after {
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -459,7 +459,7 @@ body {
 	background: #B8B8B8;
 }
 
-.unknown__items {
+.facts__items {
 	list-style: none;
 	padding: 0;
 	margin: 20px 0 0;
@@ -467,7 +467,7 @@ body {
 	flex-wrap: wrap;
 }
 
-.unknown__item {
+.facts__item {
 	width: 50%;
 	padding-top: 30px;
 	padding-left: 50px;
@@ -476,7 +476,7 @@ body {
 	background-image: url(../img/Pdf.png);
 }
 
-.unknown__item-headline {
+.facts__item-headline {
 	margin-bottom: 5px;
 	margin-top: 0;
 
@@ -485,7 +485,7 @@ body {
 	font-weight: 500;
 }
 
-.unknown__item-descr {
+.facts__item-descr {
 	margin: 0;
 	font-family: "Open Sans", Arial, sans-serif;
 	font-size: 14px;
@@ -495,18 +495,18 @@ body {
 
 }
 
-.unknown__item-descr,
-.unknown__item-headline {
+.facts__item-descr,
+.facts__item-headline {
 	transform: translateY(15px);
 	opacity: 0;
 	transition: opacity .8s ease,transform .8s ease;
 }
 
 
-.unknown__item--visible:nth-child(2n - 1) .unknown__item-descr,
-.unknown__item--visible:nth-child(2n - 1) .unknown__item-headline,
-.unknown__item--visible:nth-child(2n) .unknown__item-descr,
-.unknown__item--visible:nth-child(2n) .unknown__item-headline {
+.facts__item--visible:nth-child(2n - 1) .facts__item-descr,
+.facts__item--visible:nth-child(2n - 1) .facts__item-headline,
+.facts__item--visible:nth-child(2n) .facts__item-descr,
+.facts__item--visible:nth-child(2n) .facts__item-headline {
 	opacity: 1;
 	transform: translateY(0);
 }

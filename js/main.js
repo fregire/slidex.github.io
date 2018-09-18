@@ -27,11 +27,11 @@ $(document).ready(function(){
 
 
 	$(window).scroll(function(){
-		var topBorderElems = document.querySelectorAll(".unknown__item");
+		var topBorderElems = document.querySelectorAll(".facts__item");
 
 		for(var i = 0; i < topBorderElems.length; i++){
 			if(isVisible(topBorderElems[i], screenHeight)){
-				topBorderElems[i].classList.add("unknown__item--visible");
+				topBorderElems[i].classList.add("facts__item--visible");
 			}
 		}
 
