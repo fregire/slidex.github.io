@@ -5,6 +5,7 @@ $(document).ready(function(){
 	   return this.attr(name) !== undefined;
 	};
 	var screenHeight = screen.height;
+
 	// Функция - видим ли элемент при скролле вниз
 	function isVisible(elem, screenHeight){
 		var elemTopPosition = elem.getBoundingClientRect().top;
@@ -12,6 +13,7 @@ $(document).ready(function(){
 		
 		return result;
 	}
+
 	// Появление картинки проектов при скролле
 	$(window).scroll(function(){
 		var elem = document.querySelector(".about__photos");
@@ -25,7 +27,7 @@ $(document).ready(function(){
 		$(this).toggleClass("about__text--opened");
 	});
 
-
+	// Появление блоков с фактами при скролле
 	$(window).scroll(function(){
 		var topBorderElems = document.querySelectorAll(".facts__item");
 
@@ -75,6 +77,7 @@ $(document).ready(function(){
 		arrows: false
 	});
 
+	// Плавная смена проектов 
 	var timer = setInterval(function(){
 		var duration = 1000; //'slow'
 		$(".projects__item").each(function(index) {
@@ -84,7 +87,7 @@ $(document).ready(function(){
 	}, 6000);
 
 
-
+	// При загрузке страницы 
 	$(".examples__counter-all").text($(".examples__list").attr("data-amount"));
 
 	$(".examples__arrow").click(function(){
@@ -99,6 +102,8 @@ $(document).ready(function(){
 		$(this).addClass("examples__arrow--active");
 	});
 
+
+	// Плавное перемещение к блоку с примерами
 	var path;
 	$(".js-to-examples").click(function(e){
 		e.preventDefault();
@@ -186,6 +191,7 @@ $(document).ready(function(){
 		}
 	});
 
+	// Открытие попап окна
 	$(".js-open-popup").click(function(){
 		$(".modal").fadeIn();
 		$("html").addClass("popup-opened");
@@ -195,6 +201,7 @@ $(document).ready(function(){
 		}
 	});
 
+	// Закрытие попап окна
 	$(".modal__close").click(function(){
 		$("html").removeClass("popup-opened");
 		// Закрытие окна и очищение данных форм
