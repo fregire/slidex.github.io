@@ -581,10 +581,18 @@ html {
 }
 /* Block - prices */
 .prices {
-  padding: 60px 0;
+  padding: 0 0 60px;
   background: url(../img/prices_bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+}
+.prices__present {
+  padding: 2px 0;
+  margin-bottom: 60px;
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+  background: #0000ff;
 }
 .prices__inner {
   max-width: 1200px;
