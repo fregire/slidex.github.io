@@ -71,7 +71,7 @@ $(document).ready(function(){
 		draggable: false
 	});
 
-	$(".projects__item").slick({
+	$(".logos-list--theme-slider .logos-list__item").slick({
 		slidesToShow: 1,
 		fade: true,
 		arrows: false
@@ -80,7 +80,7 @@ $(document).ready(function(){
 	// Плавная смена проектов 
 	var timer = setInterval(function(){
 		var duration = 1000; //'slow'
-		$(".projects__item").each(function(index) {
+		$(".logos-list--theme-slider .logos-list__item").each(function(index) {
 		    $(this).delay(duration * index).slick("slickNext");
 		});		
 		clearInterval(timer);
@@ -212,4 +212,13 @@ $(document).ready(function(){
 		$modalSubmitBtn.text("Далее");
 		$modalSubmitBtn.attr("data-is-last-field", "false");
 	});
+
+	// Выбор отзыва при клике на логотип в Секции "Отзывы"
+	$(".logos-list--tabs .logos-list__item").click(function(){
+		var $index = $(this).attr("data-index");
+		$(".logos-list--tabs .logos-list__item").removeClass("logos-list__item--active");
+		$(this).addClass("logos-list__item--active");
+		$(".reviews__item").css("display", "none");
+		$(".reviews__item[data-index='" + $index + "']").fadeIn(600);
+	})
 });

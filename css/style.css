@@ -250,9 +250,12 @@ html {
 }
 .projects__list {
   padding: 0 0 0 45px;
+  border-left: 2px solid #B8B8B8;
+}
+/* Block - logos-list */
+.logos-list {
   margin: 0;
   min-height: 80px;
-  border-left: 2px solid #B8B8B8;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -269,16 +272,28 @@ html {
       flex-wrap: wrap;
   list-style: none;
 }
-.projects__item {
-  border: 2px solid #E5E5E5;
+.logos-list--theme-main .logos-list__item {
+  margin-bottom: 26px;
 }
-.projects__item div {
+.logos-list--tabs .logos-list__item:hover {
+  cursor: pointer;
+}
+.logos-list__item {
+  border: 2px solid #E5E5E5;
+  -webkit-transition: border-color 0.3s;
+  -o-transition: border-color 0.3s;
+  transition: border-color 0.3s;
+}
+.logos-list__item--active {
+  border-color: #0000ff;
+}
+.logos-list__item div {
   position: relative;
   height: 67px;
   width: 190px;
   text-align: center;
 }
-.projects__project-logo {
+.logos-list__project-logo {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -964,6 +979,75 @@ html {
 .project__main-pict-next:after {
   right: 0;
   border-left: 13px solid #191919;
+}
+/* Block - reviews */
+.reviews {
+  background: #fff;
+}
+.reviews__inner {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 15px 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.reviews__list {
+  padding: 0;
+  margin: 0 0 0 88px;
+  width: 38%;
+  list-style: none;
+}
+.reviews__item {
+  display: none;
+}
+.reviews__item--active {
+  display: block;
+}
+.reviews__avatar {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.reviews__avatar img {
+  max-width: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.reviews__social-list,
+.reviews__avatar {
+  display: inline-block;
+}
+.reviews__social-list {
+  padding: 0;
+}
+.reviews__work-position {
+  margin: 2px 0 5px;
+  font-size: 18px;
+  color: #191919;
+  line-height: 1.2;
+}
+.reviews__text {
+  line-height: 1.375;
+}
+.reviews__text,
+.reviews__headline {
+  margin: 0;
+}
+.reviews__logos {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  min-height: 300px;
+  margin-bottom: -26px;
 }
 /* Block - modal */
 .modal {
