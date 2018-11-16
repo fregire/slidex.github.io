@@ -21,6 +21,14 @@
   .projects__list .logos-list__item:last-child {
     display: none;
   }
+  /* Block - facts */
+  .facts__desktop {
+    bottom: 0;
+    right: 0;
+    width: 40%;
+    -ms-flex-item-align: center;
+        align-self: center;
+  }
 }
 @media screen and (max-width: 950px) {
   /* Block - projects */
@@ -42,6 +50,15 @@
   /* Block - about */
   .about__photos {
     width: 40%;
+  }
+  /* Block - facts */
+  .facts__desktop {
+    width: 100%;
+    margin-top: 60px;
+    text-align: center;
+  }
+  .facts__descr {
+    max-width: 550px;
   }
 }
 @media screen and (max-width: 840px) {
@@ -144,5 +161,23 @@
   /* Block - logos-list */
   .logos-list__item div {
     width: 90px;
+  }
+  /* Block - facts */
+  .facts__item {
+    width: 100%;
+    background-position: left bottom;
+  }
+  .facts__item-headline {
+    font-weight: 700;
+  }
+  .facts__content-top {
+    padding-left: 0;
+  }
+  .facts__desktop {
+    right: -10%;
+  }
+  .facts__desktop img {
+    width: 140%;
+    max-width: 200%;
   }
 }
