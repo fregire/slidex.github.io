@@ -1,8 +1,125 @@
 @media screen and (max-width: 1280px){
+	/* Block - projects */
+	.projects__headline {
+		padding-left: 30px;
+		padding-right: 15px;
+	}
+
+	.projects__list {
+		padding-left: 15px;
+	}
+}
+
+@media screen and (max-width: 1090px){
+	/* Block - projects */
+	.projects__list {
+		justify-content: flex-start;
+	}
+
+	.projects__list .logos-list__item {
+		margin: 0 15px;
+	}
+
+	.projects__list .logos-list__item:last-child {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 950px){
+	/* Block - projects */
+	.projects__headline {
+		display: none;
+	}
+
+	.projects__list {
+		border: 0;
+		justify-content: space-between;
+	}
+
+	.projects__list .logos-list__item:last-child{
+		display: block;
+	}
+
+	.projects__list .logos-list__item {
+		margin: 0;
+	}
+
+	/* Block - about */
+	.about__photos {
+		width: 40%;
+	}
+}	
+
+@media screen and (max-width: 840px){
+	/* Block - projects */
+	.projects__list .logos-list__item:last-child {
+		display: none;
+	}
+
+	/* Block - about */
+	.about__inner {
+		flex-direction: column;
+	}
+
+	.about__photos {
+		width: 100%;
+		margin-top: 30px;
+		order: 2;
+
+		text-align: center;
+	}
+
+	.about__content {
+		width: 100%;
+	}
+
+	.about__text:after {
+		bottom: -10px;
+	}
+
+	.about__headline:after {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 650px){
+	/* Block - projects */
+	.projects__inner {
+		padding: 15px 0;
+	}
+	.projects__list {
+		justify-content: flex-end;
+		padding: 0;
+	}
+
+	.projects__list .logos-list__item {
+		margin: 0 7px;
+	}
+
+	.projects__list .logos-list__item:nth-child(3){
+		margin-right: 0;
+
+		border-color: #eaf3f8;
+	}
+
+	/* Block - logos-list */
+	.logos-list {
+		min-height: 0;
+	}
+	.logos-list__item div {
+		width: 100px;	
+		height: 35px;
+
+		background: #eaf3f8;
+	}
+
+	.logos-list__project-logo {
+		width: 60%;
+	}
 
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 510px){
 	/* Block - page-header */
 	.page-header {
 		padding-bottom: 60px;
@@ -24,7 +141,7 @@
 	}
 
 	.page-header__btn {
-		margin-bottom: 15px;
+		margin: 0 auto 15px;
 	}
 
 	/* Block - phone */
@@ -44,4 +161,9 @@
 		width: 80%;
 	}
 
+
+	/* Block - logos-list */
+	.logos-list__item div {
+		width: 90px;
+	}
 }

@@ -326,6 +326,8 @@ html {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+
+	max-width: 100%;
 }
 
 /* Block - about */
@@ -342,6 +344,10 @@ html {
 
 .about__photos {
 	flex: 1;
+}
+
+.about__photos img {
+	max-width: 100%;
 }
 
 .about__photo {	
@@ -416,6 +422,7 @@ html {
 	opacity: 1;
 
 	background: linear-gradient(to top, 
+		@mainPageBG 0%,
 		@mainPageBG 50%, 
 		rgba(245, 246, 248, 0.9) 60%, 
 		rgba(245, 246, 248, 0.8) 70%, 

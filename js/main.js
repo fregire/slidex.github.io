@@ -9,7 +9,7 @@ $(document).ready(function(){
 	// Функция - видим ли элемент при скролле вниз
 	function isVisible(elem, screenHeight){
 		var elemTopPosition = elem.getBoundingClientRect().top;
-		var result = elemTopPosition < screenHeight - 200;
+		var result = elemTopPosition < screenHeight + 100;
 		
 		return result;
 	}
