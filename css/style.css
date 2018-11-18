@@ -133,6 +133,9 @@ html {
   -webkit-transform: translate3d(120%, -100px, 0) rotate3d(0, 0, 1, 90deg);
           transform: translate3d(120%, -100px, 0) rotate3d(0, 0, 1, 90deg);
 }
+.nowrap {
+  white-space: nowrap;
+}
 /* Block - field */
 .field {
   padding: 10px 1px;

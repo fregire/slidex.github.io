@@ -250,6 +250,26 @@
   .feedback__field {
     width: 100%;
   }
+  /* Block - modal */
+  .modal__window {
+    width: 80%;
+    padding: 30px;
+  }
+  .modal__form-group div {
+    width: 200%;
+  }
+  .modal__field,
+  .modal__form-group {
+    width: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .modal__submit-btn {
+    display: block;
+    right: 0;
+    margin-left: auto;
+    margin-top: 15px;
+  }
 }
 @media screen and (max-width: 510px) {
   /* Block - headline */
@@ -382,6 +402,10 @@
         -ms-flex-order: -1;
             order: -1;
     margin-top: 0;
+  }
+  /* Block - modal */
+  .modal__window {
+    width: 95%;
   }
 }
 @media screen and (max-width: 450px) {

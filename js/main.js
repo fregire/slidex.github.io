@@ -149,8 +149,10 @@ $(document).ready(function(){
 	var isReadyToSend = false;
 
 	$(".modal__form").submit(function(e){	
-		e.preventDefault();
+		var visibleZoneCoords = document.querySelector(".modal__form-group").getBoundingClientRect();
+		var visibleZoneWidth = visibleZoneCoords.right - visibleZoneCoords.left;
 
+		e.preventDefault();
 		// Если это последнее поле, значит это поле с телефоном и
 		// проверка идет уже поля с Телефоном
 		// Иначе идет проверка поля с Именем пользователя
@@ -164,7 +166,7 @@ $(document).ready(function(){
 		} else {
 			if(UserRegExp.NAME.test($modalUserNameField.val())){
 				// Переход к другому полю и фокус на него
-				$(".modal__form-group div").css("transform", "translateX(-270px)");
+				$(".modal__form-group div").css("transform", "translateX(-" + visibleZoneWidth +"px)");
 				$modalUserPhoneField.focus();
 
 				$modalUserNameField.removeClass("field--error");
