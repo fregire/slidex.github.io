@@ -133,7 +133,7 @@ html {
   -webkit-transform: translate3d(120%, -100px, 0) rotate3d(0, 0, 1, 90deg);
           transform: translate3d(120%, -100px, 0) rotate3d(0, 0, 1, 90deg);
 }
-/* Block - input */
+/* Block - field */
 .field {
   padding: 10px 1px;
   background: transparent;
@@ -643,6 +643,8 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   list-style: none;
 }
 .prices__item {
@@ -714,6 +716,30 @@ html {
   font-family: "Open Sans", Arial, sans-serif;
   color: #b9b9b9;
   font-size: 18px;
+}
+.prices__list .slick-dots {
+  bottom: -55px;
+}
+.prices__list .slick-dots li {
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  -o-transition: transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+.prices__list .slick-dots li button:before {
+  content: "";
+}
+.prices__list .slick-dots .slick-active {
+  -webkit-transform: scale(1.25);
+      -ms-transform: scale(1.25);
+          transform: scale(1.25);
+  background: #0000ff;
 }
 /* Block - feedback */
 .feedback {
@@ -1068,7 +1094,25 @@ html {
   line-height: 1.2;
 }
 .reviews__text {
+  position: relative;
   line-height: 1.375;
+}
+.reviews__text:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  content: "";
+  display: none;
+  opacity: 1;
+  background: -webkit-gradient(linear, left bottom, left top, from(#f5f6f8), color-stop(50%, #f5f6f8), color-stop(60%, rgba(245, 246, 248, 0.9)), color-stop(70%, rgba(245, 246, 248, 0.8)), color-stop(80%, rgba(245, 246, 248, 0.7)), to(rgba(245, 246, 248, 0)));
+  background: -webkit-linear-gradient(bottom, #f5f6f8 0%, #f5f6f8 50%, rgba(245, 246, 248, 0.9) 60%, rgba(245, 246, 248, 0.8) 70%, rgba(245, 246, 248, 0.7) 80%, rgba(245, 246, 248, 0) 100%);
+  background: -o-linear-gradient(bottom, #f5f6f8 0%, #f5f6f8 50%, rgba(245, 246, 248, 0.9) 60%, rgba(245, 246, 248, 0.8) 70%, rgba(245, 246, 248, 0.7) 80%, rgba(245, 246, 248, 0) 100%);
+  background: linear-gradient(to top, #f5f6f8 0%, #f5f6f8 50%, rgba(245, 246, 248, 0.9) 60%, rgba(245, 246, 248, 0.8) 70%, rgba(245, 246, 248, 0.7) 80%, rgba(245, 246, 248, 0) 100%);
+  -webkit-transition: opacity 400ms;
+  -o-transition: opacity 400ms;
+  transition: opacity 400ms;
 }
 .reviews__text,
 .reviews__headline {

@@ -124,6 +124,16 @@ $(document).ready(function(){
 
 	});
 
+	// Слайдер для тарифов 
+	if($(window).width() < 550){
+		$(".prices__list").slick({ 
+			slidesToShow: 1,
+			dots: true, 
+			arrows: false,
+			adaptiveHeight: true
+		});
+	}
+
 	// При загрузке страницы если нет Js, то будут 
 	// использоваться встроенные средства проверки html5 форм
 	// иначе с помощью js

@@ -71,6 +71,14 @@
             transform: translateX(-50%);
     text-align: center;
   }
+  /* Block - prices */
+  .prices__list {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .prices__item {
+    margin-bottom: 30px;
+  }
 }
 @media screen and (max-width: 950px) {
   /* Block - projects */
@@ -206,6 +214,15 @@
             order: 0;
     width: 70%;
     margin: 30px auto 0;
+  }
+  /* Block - prices */
+  .prices__list {
+    text-align: center;
+  }
+  .prices__item {
+    max-width: 260px;
+    margin: 0 auto;
+    background: #fff;
   }
 }
 @media screen and (max-width: 510px) {
