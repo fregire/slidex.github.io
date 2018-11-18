@@ -103,19 +103,17 @@ $(document).ready(function(){
 	// При загрузке страницы 
 	$(".examples__counter-all").text($(".examples__list").attr("data-amount"));
 
-	$(".examples__arrow").click(function(){
+	var onExamplesArrowsClick = function(){
 		// Счетчик текущей работы в слайдере
 		var $slide = $(".examples__list > .slick-list > .slick-track > .slick-slide.slick-current.slick-active");
 		var currentIndex = parseInt($($slide[$slide.length - 1]).attr("data-slick-index"));
 		$(".examples__counter-current").text(++currentIndex);
-	});
 
-	$(".examples__arrow").click(function(){
+		//Увеличение активной стрелки
 		$(".examples__arrow").removeClass("examples__arrow--active");
 		$(this).addClass("examples__arrow--active");
-	});
-
-
+	}
+	$(".examples__arrow").on("click", onExamplesArrowsClick);
 	// Плавное перемещение к блоку с примерами
 	var path;
 	$(".js-to-examples").click(function(e){
