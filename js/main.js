@@ -51,7 +51,19 @@ $(document).ready(function(){
 		arrows: false,
 		asNavFor: ".project__main-pict",
 		draggable: false,
-		focusOnSelect: true
+		focusOnSelect: true,
+		responsive: [
+			{
+				breakpoint: 1090,
+				settings: {
+					slidesToShow: 2,
+					vertical: false
+				}
+			}
+
+
+
+		]
 	});
 
 	$(".project__main-pict").slick({
@@ -92,7 +104,7 @@ $(document).ready(function(){
 
 	$(".examples__arrow").click(function(){
 		// Счетчик текущей работы в слайдере
-		var $slide = $(".slick-slide.slick-current.slick-active");
+		var $slide = $(".examples__list > .slick-list > .slick-track > .slick-slide.slick-current.slick-active");
 		var currentIndex = parseInt($($slide[$slide.length - 1]).attr("data-slick-index"));
 		$(".examples__counter-current").text(++currentIndex);
 	});
