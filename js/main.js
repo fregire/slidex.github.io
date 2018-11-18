@@ -76,6 +76,7 @@ $(document).ready(function(){
 	$(".examples__list").slick({
 		slidesToShow: 1,
 		fade: true,
+		swipe: false,
 		prevArrow: "<button class='examples__arrow examples__arrow-prev' title='Предыдущая картинка'></button>",
 		nextArrow: 
 		"<button class='examples__arrow examples__arrow-next' title='Следующая картинка'></button>" +
