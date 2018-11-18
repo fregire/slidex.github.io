@@ -519,6 +519,8 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -538,6 +540,9 @@ html {
 .steps__btn {
   margin-top: 30px;
 }
+.steps__btn--phone {
+  display: none;
+}
 .steps__line {
   height: 2px;
   width: 70px;
@@ -552,6 +557,9 @@ html {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 .steps__item {
   width: 50%;
