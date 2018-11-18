@@ -79,6 +79,17 @@
   .prices__item {
     margin-bottom: 30px;
   }
+  /* Block - page-footer */
+  .page-footer__logo {
+    max-width: 150px;
+  }
+  .page-footer__right-side {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .page-footer__social {
+    max-width: 300px;
+  }
 }
 @media screen and (max-width: 950px) {
   /* Block - projects */
@@ -347,8 +358,30 @@
   }
   .feedback__politic-warning {
     margin-left: 0;
-    margin-top: 30px;
+    margin-top: 20px;
     display: block;
+  }
+  /* Block - page-footer */
+  .page-footer__left-side {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .page-footer__email-link {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    margin: 15px 0;
+  }
+  .page-footer__right-side {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    margin-top: 0;
   }
 }
 @media screen and (max-width: 450px) {
