@@ -8,6 +8,15 @@
     padding-left: 15px;
   }
   /* Block - reviews */
+  .reviews__logos {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
 }
 @media screen and (max-width: 1090px) {
   /* Block - projects */
