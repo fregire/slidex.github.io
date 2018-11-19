@@ -8,6 +8,13 @@
 	.projects__list {
 		padding-left: 15px;
 	}
+
+	/* Block - reviews */
+	.reviews__logos {
+		// justify-content: space-around;
+		// align-items: stretch;
+		// align-self: flex-start;
+	}
 }
 
 @media screen and (max-width: 1090px){
@@ -16,11 +23,11 @@
 		justify-content: flex-start;
 	}
 
-	.projects__list .logos-list__item {
+	.projects__list .client-logo {
 		margin: 0 15px;
 	}
 
-	.projects__list .logos-list__item:last-child {
+	.projects__list .client-logo:last-child {
 		display: none;
 	}
 
@@ -116,11 +123,11 @@
 		justify-content: space-between;
 	}
 
-	.projects__list .logos-list__item:last-child{
+	.projects__list .client-logo:last-child{
 		display: block;
 	}
 
-	.projects__list .logos-list__item {
+	.projects__list .client-logo {
 		margin: 0;
 	}
 
@@ -165,7 +172,7 @@
 
 @media screen and (max-width: 840px){
 	/* Block - projects */
-	.projects__list .logos-list__item:last-child {
+	.projects__list .client-logo:last-child {
 		display: none;
 	}
 
@@ -202,6 +209,11 @@
 	.feedback__block {
 		margin-left: 0;
 	}
+
+	/* Block - reviews */
+	.reviews__logos {
+		align-items: center;
+	}
 }
 
 @media screen and (max-width: 650px){
@@ -214,11 +226,11 @@
 		padding: 0;
 	}
 
-	.projects__list .logos-list__item {
+	.projects__list .client-logo {
 		margin: 0 7px;
 	}
 
-	.projects__list .logos-list__item:nth-child(3){
+	.projects__list .client-logo:nth-child(3){
 		margin-right: 0;
 
 		border-color: #eaf3f8;
@@ -228,14 +240,16 @@
 	.logos-list {
 		min-height: 0;
 	}
-	.logos-list__item div {
+
+	/* Block - client-logo */
+	.client-logo div {
 		width: 100px;	
 		height: 35px;
 
 		background: #eaf3f8;
 	}
 
-	.logos-list__project-logo {
+	.client-logo__img {
 		width: 60%;
 	}
 
@@ -285,6 +299,22 @@
 	/* Block - feedback */
 	.feedback__field {
 		width: 100%;
+	}
+
+	/* Block - reviews */
+	.reviews__inner {
+		flex-wrap: wrap;
+	}
+
+	.reviews__list {
+		width: 100%;
+		margin: 0 0 30px;
+	}
+
+	.reviews__logos {
+		display: block;
+		margin-right: -15px;
+		justify-content: space-between;
 	}
 
 	/* Block - modal */
@@ -360,8 +390,8 @@
 	}
 
 
-	/* Block - logos-list */
-	.logos-list__item div {
+	/* Block - client-logo */
+	.client-logo  div {
 		width: 90px;
 	}
 

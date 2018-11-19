@@ -285,53 +285,48 @@ html {
 
 .projects__list {
 	padding: 0 0 0 45px;
+	display: flex;
+	justify-content: space-between;
+	flex: 1;
+
+	list-style: none;
 	border-left: 2px solid #B8B8B8;
 }
 
-/* Block - logos-list */
-.logos-list {
-	margin: 0;
-	min-height: 80px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex: 1;
-	flex-wrap: wrap;
-
-	list-style: none;
+.projects__list .client-logo {
+	width: 197px;
 }
 
-.logos-list--theme-main .logos-list__item {
-	margin-bottom: 26px;
-}
+/* Block - client-logo */
+.client-logo {
+	max-height: 67px;
 
-.logos-list--tabs .logos-list__item:hover {
-	cursor: pointer;
-}
-
-.logos-list__item {
 	border: 2px solid #E5E5E5;
 	transition: border-color .3s;
 }
 
-.logos-list__item--active {
-	border-color: @btnActionBG;
+.client-logo--active {
+	border-color: @btnActionBG!important;
 }
 
-.logos-list__item div {
+.client-logo div {
 	position: relative;
 	height: 67px;
-	width: 190px;
+	width: 100%;
 	text-align: center;
 }
 
-.logos-list__project-logo {
+.client-logo__img {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 
 	max-width: 100%;
+}
+
+.client-logo--active {
+
 }
 
 /* Block - about */
@@ -1260,10 +1255,21 @@ html {
 }
 
 .reviews__logos {
-	align-self: flex-end;
-	align-items: flex-start;
-	min-height: 300px;
-	margin-bottom: -26px;
+	width: 50%;
+	margin-left: 5%;
+	display: flex;
+	align-self: flex-start;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.reviews__logos .client-logo {
+	width: 32%;
+	margin-bottom: 15px;
+}
+
+.reviews__logos .client-logo:hover {
+	cursor: pointer;
 }
 
 
