@@ -181,6 +181,9 @@
   .about__headline:after {
     display: none;
   }
+  .about__text:hover:after {
+    opacity: 1;
+  }
   /* Block - feedback */
   .feedback {
     background: none;
@@ -205,7 +208,7 @@
 @media screen and (max-width: 650px) {
   /* Block - projects */
   .projects__inner {
-    padding: 15px 0;
+    padding: 0;
   }
   .projects__list {
     -webkit-box-pack: end;
@@ -218,10 +221,6 @@
     height: 37px;
     width: 100px;
   }
-  .projects__list .client-logo div {
-    width: 100px;
-    height: 37px;
-  }
   .projects__list .client-logo:nth-child(3) {
     margin-right: 0;
     border-color: #eaf3f8;
@@ -231,8 +230,7 @@
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
-  .reviews__logos .client-logo,
-  .reviews__logos .client-logo div {
+  .reviews__logos .client-logo {
     display: inline-block;
     width: 100px;
     height: 37px;
@@ -335,6 +333,10 @@
 @media screen and (max-width: 510px) {
   /* Block - headline */
   .headline {
+    font-size: 20px;
+  }
+  /* Block - prices */
+  .prices__present {
     font-size: 20px;
   }
   /* Block - page-header */
@@ -470,9 +472,7 @@
     padding: 0;
   }
   .projects__list .client-logo,
-  .projects__list .client-logo div,
-  .reviews__logos .client-logo,
-  .reviews__logos .client-logo div {
+  .reviews__logos .client-logo {
     width: 90px;
   }
   /* Block - reviews */
@@ -502,6 +502,22 @@
   }
   .reviews__text:after {
     display: block;
+  }
+  /*** Порядок блоков на сайте ***/
+  .feedback {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .prices {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .reviews {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
 }
 @media screen and (max-width: 450px) {

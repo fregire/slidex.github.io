@@ -134,6 +134,13 @@ $(document).ready(function(){
 		});
 	}
 
+	// Раскрытие открытие текста для отзывов
+	if($(window).width() < 510){
+		$(".reviews__text").click(function(){ 
+			$(this).toggleClass("reviews__text--opened");
+		});
+	}
+
 	// При загрузке страницы если нет Js, то будут 
 	// использоваться встроенные средства проверки html5 форм
 	// иначе с помощью js

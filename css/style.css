@@ -136,6 +136,16 @@ html {
 .nowrap {
   white-space: nowrap;
 }
+/* Block - page-main */
+.page-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
 /* Block - field */
 .field {
   padding: 10px 1px;
@@ -233,7 +243,7 @@ html {
 .projects__inner {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 15px;
+  padding: 0 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -274,6 +284,7 @@ html {
 }
 .projects__list .client-logo {
   width: 197px;
+  height: 67px;
 }
 /* Block - client-logo */
 .client-logo {
@@ -288,7 +299,7 @@ html {
 .client-logo div {
   position: relative;
   width: 100%;
-  height: 67px;
+  height: 100%;
   text-align: center;
 }
 .client-logo__img {
@@ -1090,6 +1101,9 @@ html {
 .reviews__text {
   position: relative;
   line-height: 1.375;
+  -webkit-transition: max-height 0.3s;
+  -o-transition: max-height 0.3s;
+  transition: max-height 0.3s;
 }
 .reviews__text:after {
   position: absolute;
@@ -1112,6 +1126,12 @@ html {
 .reviews__headline {
   margin: 0;
 }
+.reviews__text--opened {
+  max-height: 2000px!important;
+}
+.reviews__text--opened:after {
+  display: none!important;
+}
 .reviews__logos {
   width: 50%;
   -webkit-box-flex: 1;
@@ -1131,6 +1151,7 @@ html {
 }
 .reviews__logos .client-logo {
   width: 32%;
+  height: 67px;
   margin-bottom: 13px;
 }
 .reviews__logos .client-logo:hover {
