@@ -270,13 +270,13 @@ html {
           flex: 1;
   list-style: none;
   border-left: 2px solid #B8B8B8;
+  overflow: hidden;
 }
 .projects__list .client-logo {
   width: 197px;
 }
 /* Block - client-logo */
 .client-logo {
-  max-height: 67px;
   border: 2px solid #E5E5E5;
   -webkit-transition: border-color 0.3s;
   -o-transition: border-color 0.3s;
@@ -287,8 +287,8 @@ html {
 }
 .client-logo div {
   position: relative;
-  height: 67px;
   width: 100%;
+  height: 67px;
   text-align: center;
 }
 .client-logo__img {
@@ -1043,6 +1043,8 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .reviews__list {
   padding: 0;
@@ -1094,14 +1096,14 @@ html {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 150px;
+  height: 70px;
   content: "";
   display: none;
   opacity: 1;
-  background: -webkit-gradient(linear, left bottom, left top, from(#f5f6f8), color-stop(50%, #f5f6f8), color-stop(60%, rgba(245, 246, 248, 0.9)), color-stop(70%, rgba(245, 246, 248, 0.8)), color-stop(80%, rgba(245, 246, 248, 0.7)), to(rgba(245, 246, 248, 0)));
-  background: -webkit-linear-gradient(bottom, #f5f6f8 0%, #f5f6f8 50%, rgba(245, 246, 248, 0.9) 60%, rgba(245, 246, 248, 0.8) 70%, rgba(245, 246, 248, 0.7) 80%, rgba(245, 246, 248, 0) 100%);
-  background: -o-linear-gradient(bottom, #f5f6f8 0%, #f5f6f8 50%, rgba(245, 246, 248, 0.9) 60%, rgba(245, 246, 248, 0.8) 70%, rgba(245, 246, 248, 0.7) 80%, rgba(245, 246, 248, 0) 100%);
-  background: linear-gradient(to top, #f5f6f8 0%, #f5f6f8 50%, rgba(245, 246, 248, 0.9) 60%, rgba(245, 246, 248, 0.8) 70%, rgba(245, 246, 248, 0.7) 80%, rgba(245, 246, 248, 0) 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#fff), to(rgba(255, 255, 255, 0)));
+  background: -webkit-linear-gradient(bottom, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(bottom, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to top, #fff 0%, rgba(255, 255, 255, 0) 100%);
   -webkit-transition: opacity 400ms;
   -o-transition: opacity 400ms;
   transition: opacity 400ms;
@@ -1112,6 +1114,9 @@ html {
 }
 .reviews__logos {
   width: 50%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   margin-left: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1126,7 +1131,7 @@ html {
 }
 .reviews__logos .client-logo {
   width: 32%;
-  margin-bottom: 15px;
+  margin-bottom: 13px;
 }
 .reviews__logos .client-logo:hover {
   cursor: pointer;

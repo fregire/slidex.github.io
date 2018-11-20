@@ -8,13 +8,6 @@
 	.projects__list {
 		padding-left: 15px;
 	}
-
-	/* Block - reviews */
-	.reviews__logos {
-		justify-content: space-around;
-		align-items: stretch;
-		align-self: flex-start;
-	}
 }
 
 @media screen and (max-width: 1090px){
@@ -109,6 +102,16 @@
 
 	.page-footer__social {
 		max-width: 300px;
+	}
+
+	/* Block - reviews */
+	.reviews__logos .client-logo {
+		width: 48%;
+		margin-bottom: 20px;
+	}
+
+	.reviews__list {
+		margin-left: 0;
 	}
 }
 
@@ -211,8 +214,20 @@
 	}
 
 	/* Block - reviews */
+	.reviews__list {
+		width: 100%;
+	}
+
 	.reviews__logos {
-		align-items: center;
+		margin: 30px 0 0;
+	}
+
+	.reviews__logos .client-logo {
+		height: 100px;
+	}
+
+	.reviews__logos .client-logo__img {
+		width: 50%;
 	}
 }
 
@@ -228,6 +243,13 @@
 
 	.projects__list .client-logo {
 		margin: 0 7px;
+		height: 37px;
+		width: 100px;
+	}
+
+	.projects__list .client-logo div {
+		width: 100px;
+		height: 37px;
 	}
 
 	.projects__list .client-logo:nth-child(3){
@@ -236,16 +258,24 @@
 		border-color: #eaf3f8;
 	}
 
+	.reviews__logos {
+		justify-content: flex-end;
+	}
+
+	.reviews__logos .client-logo,
+	.reviews__logos .client-logo div {
+		display: inline-block;
+		width: 100px;
+		height: 37px;
+	}
+
 	/* Block - logos-list */
 	.logos-list {
 		min-height: 0;
 	}
 
 	/* Block - client-logo */
-	.client-logo div {
-		width: 100px;	
-		height: 35px;
-
+	.client-logo {
 		background: #eaf3f8;
 	}
 
@@ -304,6 +334,7 @@
 	/* Block - reviews */
 	.reviews__inner {
 		flex-wrap: wrap;
+		justify-content: flex-end;
 	}
 
 	.reviews__list {
@@ -312,7 +343,9 @@
 	}
 
 	.reviews__logos {
-		display: block;
+		flex: 0;
+		width: 80%;
+		flex-basis: 80%;
 		margin-right: -15px;
 		justify-content: space-between;
 	}
@@ -389,12 +422,6 @@
 		width: 80%;
 	}
 
-
-	/* Block - client-logo */
-	.client-logo  div {
-		width: 90px;
-	}
-
 	/* Block - facts */
 	.facts__item {
 		width: 100%;
@@ -450,6 +477,8 @@
 		right: 42%;
 	}
 
+	/* Block - project */
+
 	.project__main-pict-arrow {
 		background: transparent;
 	}
@@ -499,6 +528,46 @@
 	.modal__window {
 		width: 95%;
 	}
+
+	/* Block - projects */
+	.projects__inner {
+		padding: 0;
+	}
+
+	.projects__list .client-logo,
+	.projects__list .client-logo div,
+	.reviews__logos .client-logo,
+	.reviews__logos .client-logo div {
+		width: 90px;	
+	}
+	
+	/* Block - reviews */
+	.reviews__inner {
+		width: 100%;
+		padding: 30px 15px;
+
+		overflow: hidden;
+	}
+
+	.reviews__logos {
+		flex: 1;
+		margin: 0 -22px;
+		width: 100%;
+		flex-basis: 100%;
+		justify-content: flex-end;
+	}
+
+	.reviews__logos .client-logo {
+		margin: 7px;
+	}
+	
+	.reviews__text {
+		max-height: 110px;
+		overflow: hidden;
+	}
+	.reviews__text:after {
+		display: block;
+	}
 }
 
 @media screen and (max-width: 450px){
@@ -509,5 +578,11 @@
 
 	.examples__arrow-next {
 		right: 40%;
+	}
+}
+
+@media screen and (max-width: 340px){
+	.modal__submit-btn {
+		width: 100%;
 	}
 }

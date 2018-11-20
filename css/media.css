@@ -7,16 +7,6 @@
   .projects__list {
     padding-left: 15px;
   }
-  /* Block - reviews */
-  .reviews__logos {
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-    -ms-flex-item-align: start;
-        align-self: flex-start;
-  }
 }
 @media screen and (max-width: 1090px) {
   /* Block - projects */
@@ -99,6 +89,14 @@
   }
   .page-footer__social {
     max-width: 300px;
+  }
+  /* Block - reviews */
+  .reviews__logos .client-logo {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+  .reviews__list {
+    margin-left: 0;
   }
 }
 @media screen and (max-width: 950px) {
@@ -191,10 +189,17 @@
     margin-left: 0;
   }
   /* Block - reviews */
+  .reviews__list {
+    width: 100%;
+  }
   .reviews__logos {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    margin: 30px 0 0;
+  }
+  .reviews__logos .client-logo {
+    height: 100px;
+  }
+  .reviews__logos .client-logo__img {
+    width: 50%;
   }
 }
 @media screen and (max-width: 650px) {
@@ -210,19 +215,34 @@
   }
   .projects__list .client-logo {
     margin: 0 7px;
+    height: 37px;
+    width: 100px;
+  }
+  .projects__list .client-logo div {
+    width: 100px;
+    height: 37px;
   }
   .projects__list .client-logo:nth-child(3) {
     margin-right: 0;
     border-color: #eaf3f8;
+  }
+  .reviews__logos {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .reviews__logos .client-logo,
+  .reviews__logos .client-logo div {
+    display: inline-block;
+    width: 100px;
+    height: 37px;
   }
   /* Block - logos-list */
   .logos-list {
     min-height: 0;
   }
   /* Block - client-logo */
-  .client-logo div {
-    width: 100px;
-    height: 35px;
+  .client-logo {
     background: #eaf3f8;
   }
   .client-logo__img {
@@ -271,13 +291,21 @@
   .reviews__inner {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
   .reviews__list {
     width: 100%;
     margin: 0 0 30px;
   }
   .reviews__logos {
-    display: block;
+    -webkit-box-flex: 0;
+        -ms-flex: 0;
+            flex: 0;
+    width: 80%;
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
     margin-right: -15px;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -344,10 +372,6 @@
   .logo img {
     width: 80%;
   }
-  /* Block - client-logo */
-  .client-logo div {
-    width: 90px;
-  }
   /* Block - facts */
   .facts__item {
     width: 100%;
@@ -390,6 +414,7 @@
   .examples__arrow-next {
     right: 42%;
   }
+  /* Block - project */
   .project__main-pict-arrow {
     background: transparent;
   }
@@ -440,6 +465,44 @@
   .modal__window {
     width: 95%;
   }
+  /* Block - projects */
+  .projects__inner {
+    padding: 0;
+  }
+  .projects__list .client-logo,
+  .projects__list .client-logo div,
+  .reviews__logos .client-logo,
+  .reviews__logos .client-logo div {
+    width: 90px;
+  }
+  /* Block - reviews */
+  .reviews__inner {
+    width: 100%;
+    padding: 30px 15px;
+    overflow: hidden;
+  }
+  .reviews__logos {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin: 0 -22px;
+    width: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .reviews__logos .client-logo {
+    margin: 7px;
+  }
+  .reviews__text {
+    max-height: 110px;
+    overflow: hidden;
+  }
+  .reviews__text:after {
+    display: block;
+  }
 }
 @media screen and (max-width: 450px) {
   /* Block - examples */
@@ -448,5 +511,10 @@
   }
   .examples__arrow-next {
     right: 40%;
+  }
+}
+@media screen and (max-width: 340px) {
+  .modal__submit-btn {
+    width: 100%;
   }
 }
