@@ -625,12 +625,44 @@ html {
   background-size: cover;
 }
 .prices__present {
+  width: 100%;
   padding: 2px 0;
   margin-bottom: 60px;
-  text-align: center;
   font-size: 30px;
+  white-space: nowrap;
   color: #fff;
   background: #0000ff;
+  overflow: hidden;
+}
+.prices__ticker {
+  display: inline-block;
+}
+.prices__ticker--animated {
+  -webkit-transform: translateX(-110%);
+      -ms-transform: translateX(-110%);
+          transform: translateX(-110%);
+  -webkit-animation: move 10s infinite linear;
+          animation: move 10s infinite linear;
+}
+@-webkit-keyframes move {
+  0% {
+    -webkit-transform: translateX(-110%);
+            transform: translateX(-110%);
+  }
+  100% {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+}
+@keyframes move {
+  0% {
+    -webkit-transform: translateX(-110%);
+            transform: translateX(-110%);
+  }
+  100% {
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
 }
 .prices__inner {
   max-width: 1200px;

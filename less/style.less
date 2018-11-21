@@ -681,14 +681,35 @@ html {
 }
 
 .prices__present {
+	width: 100%;
 	padding: 2px 0;
 	margin-bottom: 60px;
 
-	text-align: center;
 	font-size: 30px;	
+	white-space: nowrap;
 	color: #fff;
 
 	background: @btnActionBG;
+	overflow: hidden;
+}
+
+.prices__ticker {
+	display: inline-block;
+}
+
+.prices__ticker--animated {
+	transform: translateX(-110%);
+
+	animation: move 10s infinite linear;
+}
+
+@keyframes move {
+	0% {
+        transform: translateX(-110%);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
 }
 
 .prices__inner {
