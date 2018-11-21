@@ -252,15 +252,4 @@ $(document).ready(function(){
 		$(".reviews__item[data-index='" + $index + "']").fadeIn(600);
 	});
 
-	// Бегущая строка активна если в поле зрения
-	// Чтобы сайт лишний раз не тормозил
-	$(window).scroll(function(){
-		var tickerWrapper = document.querySelector(".prices__present");
-		if(isVisible(tickerWrapper, screenHeight)){
-			$(".prices__ticker").addClass("prices__ticker--animated");
-		} else {
-			$(".prices__ticker").removeClass("prices__ticker--animated");
-		}
-	});
-
 });
