@@ -587,6 +587,7 @@ html {
   font-family: "Open Sans", Arial, sans-serif;
   font-size: 14px;
   color: #b8b8b8;
+  padding-right: 10px;
 }
 .steps__notification {
   position: relative;
@@ -1226,7 +1227,8 @@ html {
   height: 26px;
   border: 0;
   background: transparent url(../img/close_popup.png) no-repeat;
-  background-size: cover;
+  background-size: 80%;
+  background-position: center;
   -webkit-transition: opacity .2s;
   -o-transition: opacity .2s;
   transition: opacity .2s;
