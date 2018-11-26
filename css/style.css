@@ -620,7 +620,7 @@ html {
 }
 /* Block - prices */
 .prices {
-  padding: 0 0 60px;
+  padding: 0 0 30px;
   background: url(../img/prices_bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -659,6 +659,7 @@ html {
 .prices__item {
   position: relative;
   width: 260px;
+  margin-bottom: 30px;
   padding: 40px 25px 23px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -716,10 +717,13 @@ html {
 }
 .prices__price {
   margin-top: auto;
-  margin-bottom: 35px;
+  margin-bottom: 0;
   font-size: 25px;
   color: #191919;
   font-weight: 500;
+}
+.prices__btn {
+  margin-top: 30px;
 }
 .prices__price span {
   font-family: "Open Sans", Arial, sans-serif;
