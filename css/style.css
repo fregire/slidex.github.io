@@ -620,7 +620,7 @@ html {
 }
 /* Block - prices */
 .prices {
-  padding: 0 0 30px;
+  padding: 0 0 60px;
   background: url(../img/prices_bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
