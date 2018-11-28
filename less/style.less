@@ -331,10 +331,6 @@ html {
 	max-width: 100%;
 }
 
-.client-logo--active {
-
-}
-
 /* Block - about */
 .about {
 	overflow: hidden;
@@ -445,19 +441,20 @@ html {
 
 /* Block - facts */
 .facts {
+	width: 100%;
 	padding: 60px 0;
+
 	background: #ffffff;
+
+	overflow: hidden;
 }
 
 .facts__inner {
 	max-width: 1200px;
 	padding: 0 15px;
 	margin: 0 auto;
-	max-width: 100%;
 	display: flex;
 	flex-wrap: wrap;
-
-	overflow: hidden;
 }
 
 .facts__desktop {
@@ -959,6 +956,7 @@ html {
 
 .social-list__item {
 	margin: 0 15px;
+	display: inline-block;
 }
 
 .social-list__link {
@@ -1191,7 +1189,7 @@ html {
 
 .reviews__list {
 	padding: 0;
-	margin: 0 0 0 88px;
+	margin: 0 30px 0 88px;
 	width: 38%;
 
 	list-style: none;
@@ -1230,6 +1228,7 @@ html {
 
 .reviews__social-list {
 	padding: 0;
+	width: 50%;
 }
 
 .reviews__work-position {
@@ -1282,17 +1281,16 @@ html {
 .reviews__logos {
 	width: 50%;
 	flex: 1;
-	margin-left: 5%;
-	display: flex;
-	align-self: flex-start;
-	justify-content: space-between;
-	flex-wrap: wrap;
+	margin: 0 -5px;
+
+	letter-spacing: -.3em;
 }
 
 .reviews__logos .client-logo {
-	width: 32%;
+	display: inline-block;
+	width: 31%;
 	height: 67px;
-	margin-bottom: 13px;
+	margin: 0 5px 5px;
 }
 
 .reviews__logos .client-logo:hover {
@@ -1385,5 +1383,47 @@ html {
 .modal__close:hover {
 	cursor: pointer;
 	opacity: .7;
+}
+
+/* Block - notifications */
+.notifications {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+
+  width: 250px;
+  display: none;
+
+  z-index: 20;
+}
+
+.notifications__message {
+  position: relative;
+
+  display: block;
+  padding: .5em 1em;
+
+  color: #fff;
+  font-size: 13px;
+
+  background: @btnActionBG;
+  border-radius: 5px;
+}
+
+.notification__close-btn {
+  position: absolute;
+  top: .5em;
+  right: .5em;
+
+  width: 15px;
+  height: 4px;
+
+  border: 0;
+  background: #fff;
+  outline: none;
+}
+
+.notification__close-btn:hover {
+  cursor: pointer;
 }
 

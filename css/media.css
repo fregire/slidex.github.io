@@ -222,16 +222,6 @@
     margin-right: 0;
     border-color: #eaf3f8;
   }
-  .reviews__logos {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-  }
-  .reviews__logos .client-logo {
-    display: inline-block;
-    width: 100px;
-    height: 37px;
-  }
   /* Block - logos-list */
   .logos-list {
     min-height: 0;
@@ -284,11 +274,13 @@
   }
   /* Block - reviews */
   .reviews__inner {
+    max-width: 100%;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    overflow: hidden;
   }
   .reviews__list {
     width: 100%;
@@ -301,10 +293,14 @@
     width: 80%;
     -ms-flex-preferred-size: 80%;
         flex-basis: 80%;
-    margin-right: -15px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    text-align: right;
+    margin-right: -21px;
+  }
+  .reviews__logos .client-logo {
+    display: inline-block;
+    width: 100px;
+    height: 37px;
+    margin-bottom: 5px;
   }
   /* Block - modal */
   .modal__window {
@@ -506,16 +502,9 @@
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
-    margin: 0 -22px;
     width: 100%;
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-  }
-  .reviews__logos .client-logo {
-    margin: 7px;
   }
   .reviews__text {
     max-height: 110px;

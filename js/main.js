@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+	/*** Вспомогательные функции ***/
+
 	// Проверка на наличие атрибута элемента 
 	$.fn.hasAttr = function(name) {  
 	   return this.attr(name) !== undefined;
@@ -14,6 +16,19 @@ $(document).ready(function(){
 		return result;
 	}
 
+	// Показ сообщений
+	var showMessage = function(message, type){
+    	type = type || "error";
+    	if(type == "error"){
+    		$(".notifications__message").css("background", "#f65b25");
+    	} else {
+    		$(".notifications__message").css("background", "#56de47");
+    	}
+    	$(".notifications").fadeOut();
+    	$(".notifications__text").text(message);
+    	$(".notifications").fadeIn().delay(5000).fadeOut();
+    }
+
 	// Появление картинки проектов при скролле
 	$(window).scroll(function(){
 		var elem = document.querySelector(".about__photos");
@@ -22,7 +37,7 @@ $(document).ready(function(){
 		}
 	});
 
-	// Раскритие текста по клику
+	// Раскрытие текста по клику
 	$(".about__text").click(function(){
 		$(this).toggleClass("about__text--opened");
 	});
@@ -90,6 +105,12 @@ $(document).ready(function(){
 		arrows: false
 	});
 
+	//Начинать показ логотипов проектов с разных индексов
+	$(".client-logo.slick-initialized.slick-slider").each(function(i){
+		$(this).slick("slickGoTo", i);
+		console.log(i);
+	});
+
 	// Плавная смена проектов 
 	var timer = setInterval(function(){
 		var duration = 1000; //'slow'
@@ -141,6 +162,11 @@ $(document).ready(function(){
 		});
 	}
 
+	var Message = {
+		SUCCESS_SENDED: "Спасибо, Вам! Письмо успешно отправлено!",
+		NOT_ENOUGH_CONTROLS: "Выберите необходимые параметры для рассчета стоимости(Тип чипа, Кол-во, Размер и тд.)",
+    	PAGE_ERROR: "Извините. Произошла какая-то ошибка:( Попробуйте перезагрузить страницу или позвоните Нам"
+	}
 	// При загрузке страницы если нет Js, то будут 
 	// использоваться встроенные средства проверки html5 форм
 	// иначе с помощью js
@@ -156,6 +182,7 @@ $(document).ready(function(){
 	var isReadyToSend = false;
 
 	$(".modal__form").submit(function(e){	
+		var data = new FormData(this);
 		var visibleZoneCoords = document.querySelector(".modal__form-group").getBoundingClientRect();
 		var visibleZoneWidth = visibleZoneCoords.right - visibleZoneCoords.left;
 
@@ -166,9 +193,10 @@ $(document).ready(function(){
 		if($(".modal__submit-btn").is("[data-is-last-field='true']")){
 			if(UserRegExp.PHONE.test($modalUserPhoneField.val())){
 				$modalUserPhoneField.removeClass("field--error");
+				//Если это последнее поле и оно верно, значит можем отправлять
+				isReadyToSend = true;
 			} else {
 				$modalUserPhoneField.addClass("field--error");
-				alert("yes");
 			}
 		} else {
 			if(UserRegExp.NAME.test($modalUserNameField.val())){
@@ -179,16 +207,28 @@ $(document).ready(function(){
 				$modalUserNameField.removeClass("field--error");
 				$modalSubmitBtn.text("Заказать");
 				$modalSubmitBtn.attr("data-is-last-field", "true");
-				isReadyToSend = true;
 			} else {
 				$modalUserNameField.addClass("field--error");
 			}			
 		}
 
 		if(isReadyToSend){
+			data.append("action", "send_mail");
 			$.ajax({
-				// TODO: Отправка на почту средствами Ajax
-			});
+				type: "POST",
+				url: window.wp_data.ajax_url,
+				data: data,
+				processData: false,
+            	contentType: false,
+				success: function(data){
+					$(".modal__form").fadeOut();
+					$(".modal__descr").fadeOut();
+					$(".modal__headline").text(Message.SUCCESS_SENDED);
+				},
+				error: function(){
+					showMessage(Message.PAGE_ERROR);
+				}
+			}); 
 		}
 
 
@@ -202,6 +242,7 @@ $(document).ready(function(){
 
 	// Проверка Валидации формы на странице(не попап)
 	$(".feedback__form").submit(function(e){
+		var data = new FormData(this);
 		e.preventDefault();
 		if(!UserRegExp.NAME.test($userNameField.val())){
 			$userNameField.addClass("field--error");
@@ -217,7 +258,24 @@ $(document).ready(function(){
 		
 		// Если не найдено ни одного поля с ошибкой, то можно отправлять
 		if(!$(".field").is(".field--error")){
-			// Ajax
+			$(".feedback__form input").attr("disabled", true);
+			//Добавляем action для WordPress
+			data.append("action", "send_mail");
+			$.ajax({
+				type: "POST",
+				url: window.wp_data.ajax_url,
+				data: data,
+				processData: false,
+            	contentType: false,
+				success: function(data){
+					$(".feedback__form input").removeAttr("disabled");
+					$(".feedback__form input").val("");
+					showMessage(Message.SUCCESS_SENDED, "success");
+				},
+				error: function(){
+					showMessage(Message.PAGE_ERROR);
+				}
+			});
 		}
 	});
 
@@ -225,7 +283,7 @@ $(document).ready(function(){
 	$(".js-open-popup").click(function(){
 		$(".modal").fadeIn();
 		$("html").addClass("popup-opened");
-		// Запись тарифа в скрытый инпут
+		// Запись тарифа в скрытый инпут(если окно открывается после нажатия на тарифы)
 		if($(this).hasAttr("data-tariff")){
 			$("input[name='user_tariff']").val($(this).attr("data-tariff"));
 		}
