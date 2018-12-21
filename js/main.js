@@ -108,7 +108,6 @@ $(document).ready(function(){
 	//Начинать показ логотипов проектов с разных индексов
 	$(".client-logo.slick-initialized.slick-slider").each(function(i){
 		$(this).slick("slickGoTo", i);
-		console.log(i);
 	});
 
 	// Плавная смена проектов 
@@ -214,21 +213,22 @@ $(document).ready(function(){
 
 		if(isReadyToSend){
 			data.append("action", "send_mail");
-			$.ajax({
-				type: "POST",
-				url: window.wp_data.ajax_url,
-				data: data,
-				processData: false,
-            	contentType: false,
-				success: function(data){
-					$(".modal__form").fadeOut();
-					$(".modal__descr").fadeOut();
-					$(".modal__headline").text(Message.SUCCESS_SENDED);
-				},
-				error: function(){
-					showMessage(Message.PAGE_ERROR);
-				}
-			}); 
+			$(this).unbind('submit').submit();
+			// $.ajax({
+			// 	type: "POST",
+			// 	url: window.wp_data.ajax_url,
+			// 	data: data,
+			// 	processData: false,
+   //          	contentType: false,
+			// 	success: function(data){
+			// 		$(".modal__form").fadeOut();
+			// 		$(".modal__descr").fadeOut();
+			// 		$(".modal__headline").text(Message.SUCCESS_SENDED);
+			// 	},
+			// 	error: function(){
+			// 		showMessage(Message.PAGE_ERROR);
+			// 	}
+			// }); 
 		}
 
 
@@ -243,39 +243,40 @@ $(document).ready(function(){
 	// Проверка Валидации формы на странице(не попап)
 	$(".feedback__form").submit(function(e){
 		var data = new FormData(this);
-		e.preventDefault();
 		if(!UserRegExp.NAME.test($userNameField.val())){
 			$userNameField.addClass("field--error");
+			e.preventDefault();
 		} else {
 			$userNameField.removeClass("field--error");
 		}
 
 		if(!UserRegExp.PHONE.test($userPhoneField.val())){
 			$userPhoneField.addClass("field--error");
+			e.preventDefault();
 		} else {
 			$userPhoneField.removeClass("field--error");
 		}
 		
 		// Если не найдено ни одного поля с ошибкой, то можно отправлять
 		if(!$(".field").is(".field--error")){
-			$(".feedback__form input").attr("disabled", true);
-			//Добавляем action для WordPress
-			data.append("action", "send_mail");
-			$.ajax({
-				type: "POST",
-				url: window.wp_data.ajax_url,
-				data: data,
-				processData: false,
-            	contentType: false,
-				success: function(data){
-					$(".feedback__form input").removeAttr("disabled");
-					$(".feedback__form input").val("");
-					showMessage(Message.SUCCESS_SENDED, "success");
-				},
-				error: function(){
-					showMessage(Message.PAGE_ERROR);
-				}
-			});
+			// $(".feedback__form input").attr("disabled", true);
+			// //Добавляем action для WordPress
+			// data.append("action", "send_mail");
+			// $.ajax({
+			// 	type: "POST",
+			// 	url: window.wp_data.ajax_url,
+			// 	data: data,
+			// 	processData: false,
+   //          	contentType: false,
+			// 	success: function(data){
+			// 		$(".feedback__form input").removeAttr("disabled");
+			// 		$(".feedback__form input").val("");
+			// 		showMessage(Message.SUCCESS_SENDED, "success");
+			// 	},
+			// 	error: function(){
+			// 		showMessage(Message.PAGE_ERROR);
+			// 	}
+			// });
 		}
 	});
 

@@ -1268,3 +1268,34 @@ html {
 .notification__close-btn:hover {
   cursor: pointer;
 }
+/* Block - response-page */
+.response-page {
+  height: 100vh;
+  background: url(../img/manager_liked.png) no-repeat;
+  background-position-x: right;
+  background-position-y: 1500%;
+  -webkit-transition: background-position 2s;
+  -o-transition: background-position 2s;
+  transition: background-position 2s;
+}
+.response-page--opened {
+  background-position-y: bottom;
+}
+.response-page__wrapper {
+  max-width: 990px;
+  margin: 0 auto;
+  padding-left: 80px;
+  padding-top: 100px;
+}
+.response-page__logo {
+  display: block;
+  padding-left: 70px;
+  margin-left: -70px;
+  background: url(../img/project_arrow_prev.png) no-repeat 0 center;
+  background-size: 34px;
+}
+.response-page__headline {
+  margin: 60px 0 0;
+  font-weight: 400;
+  line-height: 1;
+}

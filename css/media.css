@@ -201,6 +201,11 @@
   .reviews__logos .client-logo__img {
     width: 50%;
   }
+  /* Block - response-page */
+  .response-page {
+    background-size: 90%;
+    background-position-x: 200px;
+  }
 }
 @media screen and (max-width: 650px) {
   /* Block - projects */
@@ -353,6 +358,9 @@
   .page-header__btn {
     margin: 0 auto 15px;
   }
+  .page-header__logo img {
+    width: 80%;
+  }
   /* Block - phone */
   .phone--mobile {
     display: inline-block;
@@ -363,9 +371,6 @@
   /* Block - logo */
   .logo {
     font-size: 7.2px;
-  }
-  .logo img {
-    width: 80%;
   }
   /* Block - facts */
   .facts {
@@ -529,6 +534,22 @@
         -ms-flex-order: 2;
             order: 2;
   }
+  /* Block - response-page */
+  .response-page {
+    background-size: 120%;
+    background-position-x: 100px;
+  }
+  .response-page__logo {
+    margin-left: 0;
+    padding-left: 30px;
+    background-size: 20px;
+  }
+  .response-page__logo img {
+    width: 100px;
+  }
+  .response-page__wrapper {
+    padding-left: 30px;
+  }
 }
 @media screen and (max-width: 450px) {
   /* Block - examples */
@@ -542,5 +563,17 @@
 @media screen and (max-width: 340px) {
   .modal__submit-btn {
     width: 100%;
+  }
+  /* Block - response-page */
+  .response-page {
+    background-size: 100%;
+    background-position-x: 100px;
+  }
+}
+/* Специфическая высота экрана */
+@media screen and (min-height: 900px) {
+  .response-page {
+    background-size: 120%;
+    background-position-x: -20%;
   }
 }
