@@ -51,7 +51,7 @@ html {
   width: 250px;
 }
 .btn--size-md {
-  width: 200px;
+  width: 206px;
 }
 .btn--theme-action {
   position: relative;
@@ -133,8 +133,32 @@ html {
   -webkit-transform: translate3d(120%, -100px, 0) rotate3d(0, 0, 1, 90deg);
           transform: translate3d(120%, -100px, 0) rotate3d(0, 0, 1, 90deg);
 }
+.btn--theme-border {
+  background: transparent;
+  border: 2px solid #fff;
+}
 .nowrap {
   white-space: nowrap;
+}
+.link {
+  position: relative;
+  color: #1d1d1d;
+  text-decoration: none;
+}
+.link:after {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  content: "";
+  display: block;
+}
+.link:hover {
+  color: #213cae;
+}
+.link:hover:after {
+  background: #213cae;
 }
 /* Block - page-main */
 .page-main {
@@ -172,46 +196,70 @@ html {
   font-weight: 500;
 }
 /* Block - link */
+/* Свойства специфичные для определенных страниц */
+.page-projects {
+  padding-top: 200px;
+}
+.page-index .page-header__wrapper {
+  padding-top: 40px;
+}
 /* Block - page-header */
 .page-header {
-  padding-bottom: 130px;
-  background: url(../img/header_bg.png);
-  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
 }
-.page-header__top-content {
+.page-header__wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 15px 0;
+  padding: 10px 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.page-header__main-block {
-  max-width: 1000px;
-  padding: 0 15px;
-  margin: 110px auto 0;
+.main-block {
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-image: url(../img/header_bg.jpg);
   color: #fff;
 }
-.page-header__headline {
+.main-block__wrapper {
+  max-width: 1000px;
+  padding: 0 15px 130px;
+  margin: 190px auto 0;
+}
+.main-block__headline {
   margin: 0;
   font-weight: 400;
   font-size: 30px;
 }
-.page-header__descr {
+.main-block__descr {
   max-width: 500px;
   margin-top: 15px;
   margin-bottom: 50px;
   font-size: 14px;
 }
-.page-header__phone {
+.page-header__contact-btn {
+  margin-top: 8px;
+}
+.main-block__phone {
   margin-bottom: 15px;
 }
-.page-header__btn {
+.main-block__btn {
   margin-right: 20px;
   vertical-align: top;
+}
+.page-header__nav {
+  background: #ededed;
 }
 /* Block - logo */
 .logo {
@@ -228,6 +276,7 @@ html {
 }
 /* Block - phone */
 .phone {
+  display: block;
   color: #fff;
   text-decoration: none;
   font-style: normal;
@@ -813,6 +862,13 @@ html {
   padding: 40px 0;
   background: #283140;
 }
+.page-footer--sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
 .page-footer__inner {
   max-width: 1200px;
   padding: 0 15px;
@@ -994,10 +1050,12 @@ html {
 .project__wrapper img {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
   display: block;
-  min-width: 100%;
-  height: 101.5%;
+  height: 101.6%;
 }
 .project__main-pict .slick-slide > div {
   border-radius: 5px;
@@ -1298,4 +1356,11 @@ html {
   margin: 60px 0 0;
   font-weight: 400;
   line-height: 1;
+}
+/* Block - content */
+.content__wrapper {
+  max-width: 870px;
+  margin: 0 auto;
+  -webkit-box-shadow: 9px 15px 24px 0px rgba(0, 0, 0, 0.17);
+          box-shadow: 9px 15px 24px 0px rgba(0, 0, 0, 0.17);
 }

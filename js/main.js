@@ -311,4 +311,10 @@ $(document).ready(function(){
 		$(".reviews__item[data-index='" + $index + "']").fadeIn(600);
 	});
 
+
+	// Табы при выборе категории на главной странице
+	;(function(){
+		var $tabLinks = $(".examples__cat-link");
+	})();
+
 });
