@@ -206,6 +206,9 @@ html {
 .page-projects .content img {
   width: 100%;
 }
+.page-projects .content__wrapper {
+  line-height: 0;
+}
 .page-index .page-header__wrapper {
   padding-top: 40px;
 }
