@@ -134,8 +134,11 @@ html {
           transform: translate3d(120%, -100px, 0) rotate3d(0, 0, 1, 90deg);
 }
 .btn--theme-border {
+  height: 50px;
+  font-size: 16px;
+  border-radius: 40px;
   background: transparent;
-  border: 2px solid #fff;
+  border: 1.5px solid #dfdfdf;
 }
 .nowrap {
   white-space: nowrap;
@@ -198,7 +201,10 @@ html {
 /* Block - link */
 /* Свойства специфичные для определенных страниц */
 .page-projects {
-  padding-top: 200px;
+  padding-top: 280px;
+}
+.page-projects .content img {
+  width: 100%;
 }
 .page-index .page-header__wrapper {
   padding-top: 40px;
@@ -211,10 +217,25 @@ html {
   right: 0;
   width: 100%;
 }
+.page-header--theme-sticky {
+  position: fixed;
+}
+.page-header--theme-sticky .page-header__sticky-wrapper {
+  position: relative;
+  -webkit-box-shadow: 5px 9px 17.64px 0.36px rgba(0, 0, 0, 0.29);
+          box-shadow: 5px 9px 17.64px 0.36px rgba(0, 0, 0, 0.29);
+  background: #2d13df;
+  z-index: 10;
+}
+.page-header--hidden .page-header__nav {
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
 .page-header__wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px 15px;
+  padding: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -225,6 +246,22 @@ html {
       -ms-flex-align: center;
           align-items: center;
 }
+.page-header__contact-btn {
+  margin-top: 8px;
+}
+.page-header__nav {
+  position: relative;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  background: #ededed;
+  -webkit-transition: -webkit-transform .8s;
+  transition: -webkit-transform .8s;
+  -o-transition: transform .8s;
+  transition: transform .8s;
+  transition: transform .8s, -webkit-transform .8s;
+}
+/* Block - main-block */
 .main-block {
   background-size: cover;
   background-position: bottom;
@@ -248,9 +285,6 @@ html {
   margin-bottom: 50px;
   font-size: 14px;
 }
-.page-header__contact-btn {
-  margin-top: 8px;
-}
 .main-block__phone {
   margin-bottom: 15px;
 }
@@ -258,8 +292,74 @@ html {
   margin-right: 20px;
   vertical-align: top;
 }
-.page-header__nav {
-  background: #ededed;
+/* Block - nav */
+.nav__list {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+}
+.nav__item,
+.nav__arrow {
+  padding: 50px 0;
+}
+.nav__arrow--prev {
+  border-right: 2px solid #dfdfdf;
+}
+.nav__arrow--next {
+  border-left: 2px solid #dfdfdf;
+}
+.nav__arrow .link {
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-size: 30px;
+}
+.nav__arrow .link:after {
+  width: calc(100% - 70px);
+}
+.nav__arrow--prev .link:after {
+  left: auto;
+  right: 20px;
+}
+.nav__arrow--next .link:after {
+  right: auto;
+  left: 20px;
+}
+.nav__arrow--prev .link {
+  padding-left: 50px;
+  padding-right: 20px;
+  background-image: url(../img/project_arrow_prev.png);
+}
+.nav__arrow--next .link {
+  padding-right: 50px;
+  padding-left: 20px;
+  background-image: url(../img/project_arrow_next.png);
+  background-position-x: right;
+}
+/* Block - categories */
+.categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.categories__item {
+  padding: 0 20px;
+  border-right: 2px solid #c8c8c8;
+}
+.categories__item:last-child {
+  border-right: 0;
 }
 /* Block - logo */
 .logo {
@@ -863,7 +963,7 @@ html {
   background: #283140;
 }
 .page-footer--sticky {
-  position: fixed;
+  position: static;
   bottom: 0;
   left: 0;
   right: 0;
@@ -1230,7 +1330,7 @@ html {
   min-height: 100%;
   display: none;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 11;
+  z-index: 20;
 }
 .modal__window {
   position: fixed;
@@ -1358,8 +1458,11 @@ html {
   line-height: 1;
 }
 /* Block - content */
+.content {
+  padding: 0 25px 30px;
+}
 .content__wrapper {
-  max-width: 870px;
+  max-width: 920px;
   margin: 0 auto;
   -webkit-box-shadow: 9px 15px 24px 0px rgba(0, 0, 0, 0.17);
           box-shadow: 9px 15px 24px 0px rgba(0, 0, 0, 0.17);

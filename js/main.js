@@ -18,24 +18,16 @@ $(document).ready(function(){
 
 	// Показ сообщений
 	var showMessage = function(message, type){
-    	type = type || "error";
-    	if(type == "error"){
-    		$(".notifications__message").css("background", "#f65b25");
-    	} else {
-    		$(".notifications__message").css("background", "#56de47");
-    	}
-    	$(".notifications").fadeOut();
-    	$(".notifications__text").text(message);
-    	$(".notifications").fadeIn().delay(5000).fadeOut();
-    }
-
-	// Появление картинки проектов при скролле
-	$(window).scroll(function(){
-		var elem = document.querySelector(".about__photos");
-		if(isVisible(elem, screenHeight)){
-			$(".about__photo").addClass("about__photo--visible");
-		}
-	});
+  	type = type || "error";
+  	if(type == "error"){
+  		$(".notifications__message").css("background", "#f65b25");
+  	} else {
+  		$(".notifications__message").css("background", "#56de47");
+  	}
+  	$(".notifications").fadeOut();
+  	$(".notifications__text").text(message);
+  	$(".notifications").fadeIn().delay(5000).fadeOut();
+  }
 
 	// Раскрытие текста по клику
 	$(".about__text").click(function(){
@@ -310,11 +302,6 @@ $(document).ready(function(){
 		$(".reviews__item").css("display", "none");
 		$(".reviews__item[data-index='" + $index + "']").fadeIn(600);
 	});
-
-
-	// Табы при выборе категории на главной странице
-	;(function(){
-		var $tabLinks = $(".examples__cat-link");
-	})();
+	
 
 });

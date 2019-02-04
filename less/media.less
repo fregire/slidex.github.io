@@ -10,6 +10,39 @@
 	}
 }
 
+@media screen and (max-width: 1230px){
+	/* Block - nav */
+	.nav__arrow--prev,
+	.nav__arrow--next {
+		width: 50%;
+
+		text-align: center;
+	}
+
+	.nav__arrow--prev {
+		order: 1;
+	}
+
+	.nav__arrow--next {
+		order: 2;
+	}
+
+	.nav__item--middle {
+		width: 100%;
+
+		background: #fff;
+	}
+
+	.nav__cats {
+		justify-content: center;
+	}
+
+	/* Block for pages */
+	.page-projects {
+		padding-top: 400px;
+	}
+}
+
 @media screen and (max-width: 1090px){
 	/* Block - projects */
 	.projects__list {
@@ -234,6 +267,36 @@
 	.response-page {
 		background-size: 90%;
 		background-position-x: 200px;
+	}
+
+	/* Block - nav */
+	.nav__cats {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.nav__item {
+		padding: 20px 0;
+	}
+
+	.nav__cats .categories__item {
+		border-right: 0;
+		margin: 10px 0;
+	}
+
+	/* For pages */
+	.page-projects {
+		padding-top: 500px;
+	}
+
+	/* Block - content */
+	.content__wrapper {
+		box-shadow: 9px 15px 24px 0px rgba(0, 0, 0, 0.17);
+	}
+
+	/* Block - page-footer */
+	.page-footer--sticky {
+		position: static;
 	}
 }
 
@@ -641,6 +704,53 @@
 	.examples__arrow-next {
 		right: 40%;
 	}
+
+	/* Block - nav */
+	.nav__arrow {
+		padding: 0 0 10px;
+
+		border-width: 1px;
+	}
+
+	.nav__arrow:hover .link {
+		background-size: 40px;
+	}
+
+	.nav__arrow .link {
+		display: inline-block;
+		padding: 50px 0 0;
+
+		background-position-x: center;
+	}
+
+	.nav__arrow .link:after {
+		width: 100%;
+		left: 0;
+		right: auto;
+	}
+
+	/* Block - page-header */
+	.page-header--theme-sticky .page-header__wrapper {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.page-header--theme-sticky .logo {
+		text-align: center;
+	}
+
+	.page-header--theme-sticky .phone {
+		font-size: 20px;
+		text-align: center;
+	}
+
+	.page-header__contact {
+		margin-top: 20px;
+	}
+
+	.page-header__contact-btn {
+		// margin-top: 0;
+	}
 }
 
 @media screen and (max-width: 340px){
@@ -669,5 +779,11 @@
 	.response-page {
 		background-size: 120%;
 		background-position-x: -20%;
+	}
+}
+
+@media screen and (min-height: 1100px){
+	.page-footer--sticky {
+		position: fixed;
 	}
 }
