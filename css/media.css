@@ -28,6 +28,7 @@
   .nav__item--middle {
     width: 100%;
     background: #fff;
+    border: 0;
   }
   .nav__cats {
     -webkit-box-pack: center;
