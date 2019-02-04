@@ -286,7 +286,7 @@
 
 	/* For pages */
 	.page-projects {
-		padding-top: 500px;
+		padding-top: 430px;
 	}
 
 	/* Block - content */
@@ -718,9 +718,10 @@
 
 	.nav__arrow .link {
 		display: inline-block;
-		padding: 50px 0 0;
+		padding: 35px 0 0;
 
 		background-position-x: center;
+		background-position-y: 15px;
 	}
 
 	.nav__arrow .link:after {
@@ -730,6 +731,10 @@
 	}
 
 	/* Block - page-header */
+	.page-header--theme-sticky {
+		position: static;
+	}
+
 	.page-header--theme-sticky .page-header__wrapper {
 		flex-direction: column;
 		align-items: center;
@@ -744,12 +749,27 @@
 		text-align: center;
 	}
 
+	.page-header--hidden .page-header__nav {
+		position: static;
+		transform: translateY(0);
+	}
+
 	.page-header__contact {
 		margin-top: 20px;
 	}
 
 	.page-header__contact-btn {
 		// margin-top: 0;
+	}
+
+	/* Pages */
+	.page-projects {
+		padding-top: 0;
+	}
+
+	/* Block - content */
+	.content {
+		padding-top: 30px;
 	}
 }
 
