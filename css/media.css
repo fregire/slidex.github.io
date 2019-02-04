@@ -628,7 +628,7 @@
     border-width: 1px;
   }
   .nav__arrow:hover .link {
-    background-size: 40px;
+    background-size: 37px;
   }
   .nav__arrow .link {
     display: inline-block;
