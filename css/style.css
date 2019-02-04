@@ -249,9 +249,6 @@ html {
       -ms-flex-align: center;
           align-items: center;
 }
-.page-header__contact-btn {
-  margin-top: 8px;
-}
 .page-header__nav {
   position: relative;
   -webkit-transform: translateY(0);
@@ -311,7 +308,7 @@ html {
 }
 .nav__item,
 .nav__arrow {
-  padding: 50px 0;
+  padding: 30px 0;
 }
 .nav__arrow--prev {
   border-right: 2px solid #dfdfdf;
