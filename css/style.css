@@ -1070,6 +1070,13 @@ html {
   max-width: 1140px;
   padding: 0 15px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .examples__cats {
   margin-bottom: 30px;
@@ -1077,14 +1084,14 @@ html {
 }
 .examples__list {
   position: relative;
-}
-.examples__list {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 .examples__projects {
-  max-width: 730px;
+  max-width: 700px;
   margin-right: 30px;
 }
 .examples__item {
@@ -1096,7 +1103,35 @@ html {
           flex: 1;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  height: 420px;
+  height: 400px;
+}
+.examples__more {
+  margin: 0 auto;
+  display: none;
+}
+.examples__cats .slick-arrow {
+  position: absolute;
+  width: 37px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position-y: center;
+  z-index: 20;
+}
+.examples__cats .slick-arrow:hover {
+  background-size: 37px;
+}
+.examples__cats .slick-arrow:before {
+  display: none;
+}
+.examples__cats .slick-arrow.slick-prev {
+  left: 15px;
+  background-image: url(../img/arrow_prev.png);
+}
+.examples__cats .slick-arrow.slick-next {
+  right: 15px;
+  background-image: url(../img/arrow_next.png);
+  background-position-x: right;
 }
 /* Block - previews */
 .previews__list {
@@ -1110,12 +1145,20 @@ html {
       flex-wrap: wrap;
 }
 .previews__item {
-  width: 40%;
+  position: relative;
+  width: 45%;
   height: 100px;
-  margin-bottom: 45px;
+  margin-bottom: 35px;
   text-align: center;
+  overflow: hidden;
 }
 .previews__item img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
   height: 100%;
 }
 /* Block - project */
@@ -1131,7 +1174,7 @@ html {
 }
 .project__arrow {
   position: absolute;
-  bottom: 190px;
+  bottom: 34%;
   width: 60px;
   height: 60px;
   background: rgba(255, 255, 255, 0.5);
