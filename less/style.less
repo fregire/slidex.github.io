@@ -182,6 +182,16 @@ html {
 .link:hover:after {
 	background: @linkHoverColor;
 }
+
+.link--active {
+	color: @linkHoverColor;
+}
+
+.link--active:after {
+	background: @linkHoverColor;
+}
+
+
 /* Block - page-main */
 .page-main {
 	display: flex;
@@ -1174,148 +1184,88 @@ html {
 	overflow: hidden;
 }
 
+.examples__headline {
+	padding-left: 20px;
+	margin-bottom: 30px;
+}
+
 .examples__inner {
-	max-width: 1100px;
+	max-width: 1140px;
 	padding: 0 15px;
 	margin: 0 auto;
+}
+
+.examples__cats {
+	margin-bottom: 30px;
+
+	font-size: 18px;
 }
 
 .examples__list {
 	position: relative;
 }
 
-
-.examples__arrow {
-	position: absolute;
-	bottom: -30px;
-
-	width: 28px;
-	height: 16px;
-
-	outline: none;
-	border: none;
-	opacity: .8;
-
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-color: transparent;
-
-	z-index: 10;
+.examples__list {
+	display: flex;
 }
 
-.examples__arrow:hover {
-	cursor: pointer;
+.examples__projects {
+	max-width: 730px;
+
+	margin-right: 30px;
 }
 
-.examples__arrow--active {
-	transform: scale(1.2);
-	opacity: 1;
+.examples__item {
+	padding: 0 20px 30px;
 }
 
-.examples__arrow-prev {
-	right: 300px;
+.examples__previews {
+	flex: 1;
+	align-self: flex-end;
 
-	background-image: url(../img/project_arrow_prev.png);
+	height: 420px;
 }
 
-.examples__arrow-next {
-	right: 181px;
-
-	background-image: url(../img/project_arrow_next.png);
+/* Block - previews */
+.previews__list {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
-.examples__counter {
-	position: absolute;
-	bottom: -33px;
-	right: 205px;
+.previews__item {
+	width: 40%;
+	height: 100px;
+	margin-bottom: 45px;
 
-	width: 100px;
-
-	font-size: 14px;
-	color: #1d1d1d;
-	font-weight: 500;
 	text-align: center;
 }
 
-.examples__arrow + .slick-list {
-	overflow: visible;
+.previews__item img {
+	height: 100%;
 }
 
 /* Block - project */
-
 .project__headline {
-	margin-top: 0;
+	margin: 0;
+
+	font-size: 18px;
 }
 
 .project__descr {
 	max-width: 510px;
-	margin-bottom: 35px;
-}
+	margin: 8px 0 35px;
+	height: 80px;
 
-.project__picts {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	align-items: flex-start;
-
-	padding-left: 10px;
-	
-}
-
-.project__main-pict {
-	width: 700px;
-	border-radius: 5px;
-	margin-right: 25px;
-	box-shadow: 0px 15px 24px 0px rgba(0, 0, 0, 0.31);
-}
-
-.project__picts-list {
-	flex: 1;
-	width: 31%;
-}
-
-.project__wrapper {
-	padding-bottom: 56.25%;
-	position: relative;
-}
-
-.project__wrapper img {
-	position: absolute;
-	top: 0;
-	left: 50%;
-	transform: translateX(-50%);
-
-	display: block;
-	height: 101.6%;
-}
-
-.project__main-pict .slick-slide > div {
-	border-radius: 5px;
-	border: 1px solid #fff;
 	overflow: hidden;
 }
 
-
-.project .project__picts-list .project__wrapper {
-	overflow: hidden;
-}
-
-.project .project__picts-list .slick-track {
-	margin: -9px 0;
-}
-
-.project .project__picts-list .slick-slide {
-	margin: 8px 0;
-}
-
-.project__main-pict-arrow {
+.project__arrow {
 	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
+	bottom: 190px;
 
-	width: 38px;
-	height: 38px;
+	width: 60px;
+	height: 60px;
 	background: rgba(255, 255, 255, .5);
 	border-radius: 50%;
 	border: none;
@@ -1325,37 +1275,60 @@ html {
 	outline: none;
 }
 
-.project__main-pict-arrow:hover {
+.project__arrow:hover {
 	cursor: pointer;
 }
 
-.project__main-pict-arrow:after {
+.project__arrow:after {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
 
 	display: block;
 	content: "";
-	border: 13px solid transparent;
+	border: 20px solid transparent;
 }
 
-.project__main-pict-prev {
-	left: -25px;
+.project__arrow--prev {
+	left: -5px;
 }
 
-.project__main-pict-prev:after {
+.project__arrow--prev:after {
 	left: 0;
 
-	border-right: 13px solid @headlineColor;
+	border-right: 20px solid @headlineColor;
 }
 
-.project__main-pict-next {
-	right: -25px;
+.project__arrow--next {
+	right: -5px;
 }
-.project__main-pict-next:after {
+.project__arrow--next:after {
 	right: 0;
 
-	border-left: 13px solid @headlineColor;
+	border-left: 20px solid @headlineColor;
+}
+
+.project__preview {
+	padding: 1px;
+	border-radius: 5px;
+	box-shadow: 0px 15px 24px 0px rgba(0, 0, 0, 0.31);
+
+	overflow: hidden;
+}
+
+.project__preview-wrapper {
+	position: relative;
+	padding-top: 56.25%;
+}
+
+.project__preview img {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+
+	height: 100%;
+	width: auto;
 }
 
 /* Block - reviews */

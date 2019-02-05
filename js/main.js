@@ -73,23 +73,23 @@ $(document).ready(function(){
 		]
 	});
 
-	$(".project__main-pict").slick({
+	$(".examples__projects").slick({
 		slidesToShow: 1,
-		prevArrow: "<button class='project__main-pict-arrow project__main-pict-prev' title='Предыдущая картинка'></button>",
-		nextArrow: "<button class='project__main-pict-arrow project__main-pict-next' title='Следующая картинка'></button>",
-		asNavFor: ".project__picts-list"
+		prevArrow: "<button class='project__arrow project__arrow--prev' title='Предыдущая картинка'></button>",
+		nextArrow: "<button class='project__arrow project__arrow--next' title='Следующая картинка'></button>",
+		fade: true
 	});
 
-	$(".examples__list").slick({
-		slidesToShow: 1,
-		fade: true,
-		swipe: false,
-		prevArrow: "<button class='examples__arrow examples__arrow-prev' title='Предыдущая картинка'></button>",
-		nextArrow: 
-		"<button class='examples__arrow examples__arrow-next' title='Следующая картинка'></button>" +
-		"<span class='examples__counter'><span class='examples__counter-current'>1</span> из <span class='examples__counter-all'>10</span></span>",
-		draggable: false
-	});
+	// $(".examples__list").slick({
+	// 	slidesToShow: 1,
+	// 	fade: true,
+	// 	swipe: false,
+	// 	prevArrow: "<button class='examples__arrow examples__arrow-prev' title='Предыдущая картинка'></button>",
+	// 	nextArrow: 
+	// 	"<button class='examples__arrow examples__arrow-next' title='Следующая картинка'></button>" +
+	// 	"<span class='examples__counter'><span class='examples__counter-current'>1</span> из <span class='examples__counter-all'>10</span></span>",
+	// 	draggable: false
+	// });
 
 	$(".projects__list .client-logo").slick({
 		slidesToShow: 1,
