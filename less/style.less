@@ -1205,19 +1205,23 @@ html {
 
 .examples__list {
 	position: absolute;
+	top: 0;
+	left: 0;
+
+	opacity: 0;
+	visibility: hidden;
 
 	flex-wrap: wrap;
 	display: flex;
 
-	opacity: 0;
-
-	transition: opacity .5s;
+	transition: .4s;
 }
 
 .examples__list--active {
 	position: relative;
-	
+
 	opacity: 1;
+	visibility: visible;
 
 	z-index: 20;
 }

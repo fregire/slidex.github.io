@@ -145,19 +145,18 @@ $(document).ready(function(){
 			$(".examples__cats .link").removeClass("link--active");
 			$(this).addClass("link--active");
 
-
 			$(".examples__list").removeClass("examples__list--active");
 			$(".examples__list[data-cat='" + currentCat + "']").addClass("examples__list--active");
 		});
 
 		// При перелистывании слайдера на мобилках
 		$(".examples__cats").on("afterChange", function(slick, currentSlide, index, i){
-			$(".examples__list").removeClass("examples__list--active");
+			$(".examples__list--active").removeClass("examples__list--active");
 			$(".examples__list[data-cat='" + index + "']").addClass("examples__list--active");
 		});
 
 	})();
-	
+
 	// Перелистывание к работам по нажатию на превью(справа мелкие картинки - превью)
 	(function(){
 		$(".previews img").click(function(){
