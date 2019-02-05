@@ -1083,12 +1083,21 @@ html {
   font-size: 18px;
 }
 .examples__list {
-  position: relative;
+  position: absolute;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  opacity: 0;
+  -webkit-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s;
+}
+.examples__list--active {
+  position: relative;
+  opacity: 1;
+  z-index: 20;
 }
 .examples__projects {
   max-width: 700px;
@@ -1151,6 +1160,9 @@ html {
   margin-bottom: 35px;
   text-align: center;
   overflow: hidden;
+}
+.previews__item:hover {
+  cursor: pointer;
 }
 .previews__item img {
   position: absolute;

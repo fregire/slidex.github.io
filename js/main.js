@@ -77,12 +77,6 @@ $(document).ready(function(){
 		]
 	});
 
-	$(".examples__projects").slick({
-		slidesToShow: 1,
-		prevArrow: "<button class='project__arrow project__arrow--prev' title='Предыдущая картинка'></button>",
-		nextArrow: "<button class='project__arrow project__arrow--next' title='Следующая картинка'></button>",
-		fade: true
-	});
 
 	// $(".examples__list").slick({
 	// 	slidesToShow: 1,
@@ -135,6 +129,45 @@ $(document).ready(function(){
 		});
 	}
 
+	$(".examples__projects").slick({
+		slidesToShow: 1,
+		prevArrow: "<button class='project__arrow project__arrow--prev' title='Предыдущая картинка'></button>",
+		nextArrow: "<button class='project__arrow project__arrow--next' title='Следующая картинка'></button>",
+		fade: true
+	});	
+	// Табы работ 
+	(function(){
+		// При клике на категории на десктопах
+		$(".examples__cats .link").click(function(e){
+			e.preventDefault();
+			var currentCat = $(this).attr("data-cat");
+
+			$(".examples__cats .link").removeClass("link--active");
+			$(this).addClass("link--active");
+
+
+			$(".examples__list").removeClass("examples__list--active");
+			$(".examples__list[data-cat='" + currentCat + "']").addClass("examples__list--active");
+		});
+
+		// При перелистывании слайдера на мобилках
+		$(".examples__cats").on("afterChange", function(slick, currentSlide, index, i){
+			$(".examples__list").removeClass("examples__list--active");
+			$(".examples__list[data-cat='" + index + "']").addClass("examples__list--active");
+		});
+
+	})();
+	
+	// Перелистывание к работам по нажатию на превью(справа мелкие картинки - превью)
+	(function(){
+		$(".previews img").click(function(){
+			var $currentImg = $(this);
+			var currentIndex = +$currentImg.attr("data-index");
+			var $parentSlider = $currentImg.parent().parent().parent().parent();
+
+			$parentSlider.find(".examples__projects").slick("slickGoTo", currentIndex);
+		})
+	})();
 	// Раскрытие открытие текста для отзывов
 	if($(window).width() < 510){
 		$(".reviews__text").click(function(){ 
@@ -146,7 +179,7 @@ $(document).ready(function(){
 		$(".examples__cats").slick({
 			slidesToShow: 1,
 			arrows: true
-		})
+		});
 	}
 
 	var Message = {

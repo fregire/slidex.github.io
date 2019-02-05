@@ -160,7 +160,7 @@ html {
 .link {
 	position: relative;
 
-	color:#1d1d1d;
+	color: #1d1d1d;
 	text-decoration: none;
 }
 
@@ -1204,10 +1204,22 @@ html {
 }
 
 .examples__list {
-	position: relative;
+	position: absolute;
 
 	flex-wrap: wrap;
 	display: flex;
+
+	opacity: 0;
+
+	transition: opacity .5s;
+}
+
+.examples__list--active {
+	position: relative;
+	
+	opacity: 1;
+
+	z-index: 20;
 }
 
 .examples__projects {
@@ -1283,6 +1295,10 @@ html {
 	overflow: hidden;
 }
 
+.previews__item:hover {
+	cursor: pointer;
+}
+
 .previews__item img {
 	position: absolute;
 	top: 0;
@@ -1291,6 +1307,7 @@ html {
 
 	height: 100%;
 }
+
 
 /* Block - project */
 .project__headline {
