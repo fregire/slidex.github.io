@@ -46,6 +46,10 @@ $(document).ready(function(){
 
 		if(isVisible(document.querySelector(".steps__inner"), screenHeight)){
 			$(".steps__notification").addClass("steps__notification--visible");
+		}
+
+		if(isVisible(document.querySelector(".about"), screenHeight)){
+			$(".about__photo").addClass("about__photo--visible");
 		} 
 	});
 
