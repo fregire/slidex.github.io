@@ -338,12 +338,12 @@ html {
 .nav__arrow--prev .link {
   padding-left: 50px;
   padding-right: 20px;
-  background-image: url(../img/project_arrow_prev.png);
+  background-image: url(../img/arrow_prev.png);
 }
 .nav__arrow--next .link {
   padding-right: 50px;
   padding-left: 20px;
-  background-image: url(../img/project_arrow_next.png);
+  background-image: url(../img/arrow_next.png);
   background-position-x: right;
 }
 /* Block - categories */
@@ -1492,7 +1492,7 @@ html {
 }
 /* Block - content */
 .content {
-  padding: 0 25px 120px;
+  padding: 0 25px 80px;
 }
 .content__wrapper {
   max-width: 920px;
