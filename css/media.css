@@ -57,6 +57,7 @@
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     margin-top: 30px;
+    height: auto;
   }
   .examples__projects {
     max-width: 100vw;
@@ -127,6 +128,10 @@
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
             transform: translateY(0);
+  }
+  /* Block - examples */
+  .examples__inner {
+    padding: 0;
   }
 }
 @media screen and (max-width: 950px) {
@@ -666,9 +671,6 @@
     padding-top: 30px;
   }
   /* Block - examples */
-  .examples__inner {
-    padding: 0;
-  }
   .examples__headline {
     padding-left: 0;
     text-align: center;
