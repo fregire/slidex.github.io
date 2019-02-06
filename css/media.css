@@ -670,7 +670,8 @@
   }
   /* Block - content */
   .content {
-    padding-top: 30px;
+    padding-top: 50px;
+    padding-bottom: 60px;
   }
   /* Block - examples */
   .examples__headline {
