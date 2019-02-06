@@ -230,15 +230,18 @@ html {
   right: 0;
   width: 100%;
 }
-.page-header--theme-sticky {
-  position: fixed;
-}
 .page-header--theme-sticky .page-header__sticky-wrapper {
-  position: relative;
+  position: fixed;
+  width: 100vw;
   -webkit-box-shadow: 5px 9px 17.64px 0.36px rgba(0, 0, 0, 0.29);
           box-shadow: 5px 9px 17.64px 0.36px rgba(0, 0, 0, 0.29);
   background: #2d13df;
   z-index: 10;
+}
+.page-header--theme-sticky .page-header__nav {
+  position: absolute;
+  top: 80px;
+  width: 100%;
 }
 .page-header__wrapper {
   max-width: 1200px;
