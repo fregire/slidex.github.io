@@ -139,27 +139,6 @@
 	</div>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/slick.min.js"></script>	
-	<script>
-		// Скрытие/раскрытие навигации на странице работ при скролле
-		;(function(){	
-			var $header = $(".page-header");
-			var $topCoords = $header.offset().top;
-
-			function onWindowScroll(e){
-				var shiftY = $header.offset().top - $topCoords;
-
-				if(shiftY < 0){
-					$header.removeClass("page-header--hidden");
-				} else {
-					$header.addClass("page-header--hidden");
-				}
-
-				$topCoords = $header.offset().top;
-
-			}
-			$(window).scroll(onWindowScroll);
-		})();
-	</script>
 	<script src="js/main.js"></script>
 
 
