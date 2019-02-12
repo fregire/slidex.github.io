@@ -448,7 +448,9 @@
   }
   .facts__item {
     width: 100%;
-    background-position: left bottom;
+    padding-left: 55px;
+    background-position: 0 35px;
+    background-size: 50px;
   }
   .facts__item-headline {
     font-weight: 700;
@@ -476,11 +478,16 @@
   .steps__notification {
     width: 100%;
   }
+  .steps__items {
+    margin: 0 -15px;
+  }
   .steps__item {
     width: 100%;
-    margin-left: 15px;
+    padding-left: 60px;
+    margin-left: 5px;
     margin-bottom: 15px;
     background-size: 70px;
+    background-position: 25px 15px;
   }
   .steps__item-headline {
     font-weight: 400;
