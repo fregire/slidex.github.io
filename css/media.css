@@ -449,8 +449,8 @@
   .facts__item {
     width: 100%;
     padding-left: 55px;
-    background-position: 0 35px;
-    background-size: 50px;
+    background-position: 0 30px;
+    background-size: 65px;
   }
   .facts__item-headline {
     font-weight: 700;
@@ -459,11 +459,7 @@
     padding-left: 0;
   }
   .facts__desktop {
-    right: -10%;
-  }
-  .facts__desktop img {
-    width: 140%;
-    max-width: 200%;
+    position: static;
   }
   .facts__headline:after {
     display: none;

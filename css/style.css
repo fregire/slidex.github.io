@@ -3,7 +3,7 @@
           box-sizing: border-box;
 }
 html {
-  -webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: none;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
 }
@@ -14,6 +14,7 @@ html {
   position: relative;
   padding: 0;
   margin: 0;
+  width: 100%;
   font-family: "Ubuntu", "Open Sans", Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -22,6 +23,7 @@ html {
   line-height: 1.5;
   word-wrap: break-word;
   background: #f5f6f8;
+  overflow: visible;
 }
 .visually-hidden {
   position: absolute;
@@ -469,6 +471,7 @@ html {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   max-width: 100%;
+  height: auto;
 }
 /* Block - about */
 .about {
@@ -489,6 +492,7 @@ html {
 }
 .about__photos img {
   max-width: 100%;
+  height: auto;
 }
 .about__photo {
   -webkit-transform: translate(-800px, -300px);
@@ -592,6 +596,7 @@ html {
 }
 .facts__desktop img {
   max-width: 100%;
+  height: auto;
 }
 .facts__content {
   -webkit-box-flex: 1;
@@ -803,6 +808,7 @@ html {
   margin: 0 auto;
 }
 .prices__list {
+  position: relative;
   padding: 0;
   margin: 0;
   display: -webkit-box;
@@ -1287,6 +1293,7 @@ html {
 }
 .reviews__avatar img {
   max-width: 80px;
+  height: auto;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1506,4 +1513,8 @@ html {
   margin: 0 auto;
   -webkit-box-shadow: 9px 15px 24px 0px rgba(0, 0, 0, 0.17);
           box-shadow: 9px 15px 24px 0px rgba(0, 0, 0, 0.17);
+}
+/* For Iphone */
+.headline .nowrap {
+  color: #191919;
 }
