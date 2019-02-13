@@ -15,6 +15,7 @@ html {
   padding: 0;
   margin: 0;
   width: 100%;
+  width: 100vw;
   font-family: "Ubuntu", "Open Sans", Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -23,7 +24,7 @@ html {
   line-height: 1.5;
   word-wrap: break-word;
   background: #f5f6f8;
-  overflow: visible;
+  overflow: hidden;
 }
 .visually-hidden {
   position: absolute;
