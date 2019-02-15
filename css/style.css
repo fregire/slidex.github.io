@@ -1512,6 +1512,9 @@ html {
 .content--project {
   text-align: center;
 }
+.content h1 {
+  margin-bottom: 5px;
+}
 .content__text {
   margin-bottom: 30px;
 }
