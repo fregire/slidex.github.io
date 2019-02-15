@@ -300,23 +300,20 @@ $(document).ready(function(){
 
 	//Смена ссылки при свайпе работ в слайдере
 	// на мобилках
-	var $linkMore = $(".examples__more");
-	var href = $(".examples__list--active .examples__projects a").attr("href");
-	
-	// При загрузке страницы и при перелистывании слайдов
-	$linkMore.attr("href", href);
-
 	$(".examples__projects").on("afterChange", function(slick, slide, currentIndex){
 		href = $(this).find(".slick-slide.slick-current a").attr("href");
+		var $linkMore = $(this).siblings(".examples__more");
 
 		$linkMore.attr("href", href);
 	});
 
-	$(".examples__cats").on("afterChange", function(slick, slide, currentIndex){
-		href = $(".examples__list--active .examples__projects a").attr("href");
-
-		$linkMore.attr("href", href);
-	});
+	// Переход по ссылке в виде картинки запрещен 
+	// на мобилках
+	if($(window).width() <= 510){
+		$(".examples__projects a").click(function(e){
+			e.preventDefault();
+		});
+	}
 
 	
 

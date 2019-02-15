@@ -24,7 +24,7 @@ html {
   line-height: 1.5;
   word-wrap: break-word;
   background: #f5f6f8;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .visually-hidden {
   position: absolute;
@@ -210,7 +210,7 @@ html {
 /* Block - link */
 /* Свойства специфичные для определенных страниц */
 .page-projects {
-  padding-top: 240px;
+  padding-top: 170px;
 }
 .page-projects .content img {
   width: 100%;
@@ -223,7 +223,7 @@ html {
 .page-projects .content p {
   margin: 0;
 }
-.page-projects .content__wrapper {
+.page-projects .content__media {
   line-height: 0;
 }
 .page-index .page-header__wrapper {
@@ -1509,11 +1509,19 @@ html {
 .content {
   padding: 0 25px 80px;
 }
-.content__wrapper {
+.content--project {
+  text-align: center;
+}
+.content__text {
+  margin-bottom: 30px;
+}
+.content__inner {
   max-width: 920px;
   margin: 0 auto;
-  -webkit-box-shadow: 9px 15px 24px 0px rgba(0, 0, 0, 0.17);
-          box-shadow: 9px 15px 24px 0px rgba(0, 0, 0, 0.17);
+}
+.content__media {
+  -webkit-box-shadow: 0px 15px 24px 0px rgba(0, 0, 0, 0.31);
+          box-shadow: 0px 15px 24px 0px rgba(0, 0, 0, 0.31);
 }
 /* For Iphone */
 .headline .nowrap {
