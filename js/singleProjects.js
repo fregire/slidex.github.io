@@ -19,7 +19,7 @@
 	var startX, 
 			startTime, 
 			maxTime = 300,
-			minDist = 50,
+			minDist = 70,
 			swipeDir = "none",
 			pageArrowPrevHref = document.querySelector(".page-nav--prev").href,
 			pageArrowNextHref = document.querySelector(".page-nav--next").href;
