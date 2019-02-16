@@ -316,18 +316,21 @@ html {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   list-style: none;
 }
 .nav__item,
 .nav__arrow {
   padding: 30px 0;
 }
-.nav__item--middle {
-  border-right: 2px solid #dfdfdf;
-  border-left: 2px solid #dfdfdf;
+.nav__arrow {
+  position: fixed;
+  top: 50vh;
+  left: 0;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 .nav__arrow .link {
   background-repeat: no-repeat;
@@ -1189,6 +1192,36 @@ html {
           transform: translateX(-50%);
   height: 100%;
 }
+/* Block - arrow */
+.arrow {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  border: none;
+  z-index: 10;
+  outline: none;
+}
+.arrow:after {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: block;
+  content: "";
+  border: 20px solid transparent;
+}
+.arrow--prev:after {
+  left: 0;
+  border-right: 20px solid #191919;
+}
+.arrow--next:after {
+  right: 0;
+  border-left: 20px solid #191919;
+}
 /* Block - project */
 .project__headline {
   margin: 0;
@@ -1203,40 +1236,15 @@ html {
 .project__arrow {
   position: absolute;
   bottom: 34%;
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  border: none;
-  z-index: 10;
-  outline: none;
 }
 .project__arrow:hover {
   cursor: pointer;
 }
-.project__arrow:after {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  display: block;
-  content: "";
-  border: 20px solid transparent;
-}
 .project__arrow--prev {
   left: -5px;
 }
-.project__arrow--prev:after {
-  left: 0;
-  border-right: 20px solid #191919;
-}
 .project__arrow--next {
   right: -5px;
-}
-.project__arrow--next:after {
-  right: 0;
-  border-left: 20px solid #191919;
 }
 .project__preview {
   border: 1px solid #fff;
@@ -1525,6 +1533,20 @@ html {
 .content__media {
   -webkit-box-shadow: 0px 15px 24px 0px rgba(0, 0, 0, 0.31);
           box-shadow: 0px 15px 24px 0px rgba(0, 0, 0, 0.31);
+}
+/* Block - page-nav */
+.page-nav {
+  position: fixed;
+  top: 50vh;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+.page-nav--prev {
+  left: 5%;
+}
+.page-nav--next {
+  right: 5%;
 }
 /* For Iphone */
 .headline .nowrap {

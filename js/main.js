@@ -82,8 +82,8 @@ $(document).ready(function(){
 
 		$(".examples__projects").slick({
 			slidesToShow: 1,
-			prevArrow: "<button class='project__arrow project__arrow--prev' title='Предыдущая картинка'></button>",
-			nextArrow: "<button class='project__arrow project__arrow--next' title='Следующая картинка'></button>",
+			prevArrow: "<button class='project__arrow project__arrow--prev arrow arrow--prev' title='Предыдущая картинка'></button>",
+			nextArrow: "<button class='project__arrow project__arrow--next arrow arrow--next' title='Следующая картинка'></button>",
 			fade: true
 		});	
 
