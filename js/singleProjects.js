@@ -19,7 +19,7 @@
 	var startX, 
 			startTime, 
 			maxTime = 300,
-			minDist = 70,
+			minDist = 150,
 			swipeDir = "none",
 			pageArrowPrevHref = document.querySelector(".page-nav--prev").href,
 			pageArrowNextHref = document.querySelector(".page-nav--next").href;
@@ -40,6 +40,7 @@
 				swipeDir = (distX > 0) ? "left" : "right";
 			}
 		}
+		console.log(distX);
 
 		switch(swipeDir){
 			case 'left':
