@@ -2,9 +2,8 @@
 	var onWindowScrollShowArrows = function(){
 		var $navList = $(".nav__list");
 		var $pageArrows = $(".page-nav");
-		var coordsYBottom = $navList.offset().top + $navList.innerHeight();
 
-		if(coordsYBottom < $(window).scrollTop()){
+		if($(window).scrollTop() > 50){
 			$pageArrows.addClass("page-nav--visible");
 		} else {
 			$pageArrows.removeClass("page-nav--visible");
