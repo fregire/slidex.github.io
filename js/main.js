@@ -2,22 +2,6 @@ $(document).ready(function(){
 
 	// Необходимые переменные 
 	var screenHeight = screen.height;
-
-	/*** Вспомогательные функции ***/
-
-	// Проверка на наличие атрибута элемента 
-	$.fn.hasAttr = function(name) {  
-	   return this.attr(name) !== undefined;
-	};
-
-	// Функция - видим ли элемент при скролле вниз
-	function isVisible(elem, screenHeight){
-		var elemTopPosition = elem.getBoundingClientRect().top;
-		var result = elemTopPosition < screenHeight - 150;
-		
-		return result;
-	}
-
 	// Раскрытие текста по клику
 	$(".about__text").click(function(){
 		$(this).toggleClass("about__text--opened");
@@ -28,16 +12,16 @@ $(document).ready(function(){
 		var topBorderElems = document.querySelectorAll(".facts__item");
 
 		for(var i = 0; i < topBorderElems.length; i++){
-			if(isVisible(topBorderElems[i], screenHeight)){
+			if(App.isVisible(topBorderElems[i], screenHeight)){
 				topBorderElems[i].classList.add("facts__item--visible");
 			}
 		}
 
-		if(isVisible(document.querySelector(".steps__inner"), screenHeight)){
+		if(App.isVisible(document.querySelector(".steps__inner"), screenHeight)){
 			$(".steps__notification").addClass("steps__notification--visible");
 		}
 
-		if(isVisible(document.querySelector(".about"), screenHeight)){
+		if(App.isVisible(document.querySelector(".about"), screenHeight)){
 			$(".about__photo").addClass("about__photo--visible");
 		} 
 	});
@@ -114,17 +98,6 @@ $(document).ready(function(){
 		clearInterval(timer);
 	}, 6000);
 
-	// Плавное перемещение к блоку с примерами
-	(function(){
-		var path;
-		$(".js-to-examples").click(function(e){
-			e.preventDefault();
-
-			path = $(this).attr("href");
-			$('html, body').animate({ scrollTop: $(path).offset().top }, 500); 
-
-		});		
-	})();
 
 	// Табы категорий работ на Главной 
 	(function(){
@@ -170,64 +143,6 @@ $(document).ready(function(){
 
 	// Проверка форм
 	(function(){
-		// Перечисления регулярок для проверки форм
-		var UserRegExp = {
-			PHONE: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/,
-			NAME: /^[а-яА-ЯёЁa-zA-Z]{2,20}$/
-		}
-		var isPhoneValid = function(value){
-			return UserRegExp.PHONE.test(value);
-		}
-		var isNameValid = function(value){
-			return UserRegExp.NAME.test(value);
-		}
-
-		// Удаление встроенных шаблонов - проверка через js
-		$("input").removeAttr("pattern");
-
-		// Проверка в попап окне
-		var $modalUserNameField = $(".modal__field[name='user_name']");
-		var $modalUserPhoneField = $(".modal__field[name='user_phone']");
-		var $modalSubmitBtn = $(".modal__submit-btn");
-		var isReadyToSend = false;
-
-		$(".modal__form").submit(function(e){	
-			var data = new FormData(this);
-			var visibleZoneCoords = document.querySelector(".modal__form-group").getBoundingClientRect();
-			var visibleZoneWidth = visibleZoneCoords.right - visibleZoneCoords.left;
-
-			e.preventDefault();
-			// Если это последнее поле, значит это поле с телефоном и
-			// проверка идет уже поля с Телефоном
-			// Иначе идет проверка поля с Именем пользователя
-			if($(".modal__submit-btn").is("[data-is-last-field='true']")){
-				if(isPhoneValid($modalUserPhoneField.val())){
-					$modalUserPhoneField.removeClass("field--error");
-					//Если это последнее поле и оно верно, значит можем отправлять
-					isReadyToSend = true;
-				} else {
-					$modalUserPhoneField.addClass("field--error");
-				}
-			} else {
-				if(isNameValid($modalUserNameField.val())){
-					// Переход к другому полю и фокус на него
-					$(".modal__form-group div").css("transform", "translateX(-" + visibleZoneWidth +"px)");
-					$modalUserPhoneField.focus();
-
-					$modalUserNameField.removeClass("field--error");
-					$modalSubmitBtn.text("Заказать");
-					$modalSubmitBtn.attr("data-is-last-field", "true");
-				} else {
-					$modalUserNameField.addClass("field--error");
-				}			
-			}
-
-			if(isReadyToSend){
-				data.append("action", "send_mail");
-				$(this).unbind('submit').submit();
-				// Происходит по успешной проверке 
-			}
-		});
 
 		// Проверка на главной странице
 		var $userNameField = $(".feedback__field[name='user_name']");
@@ -238,14 +153,14 @@ $(document).ready(function(){
 		// Проверка Валидации формы на странице(не попап)
 		$(".feedback__form").submit(function(e){
 			var data = new FormData(this);
-			if(!isNameValid($userNameField.val())){
+			if(!App.isNameValid($userNameField.val())){
 				$userNameField.addClass("field--error");
 				e.preventDefault();
 			} else {
 				$userNameField.removeClass("field--error");
 			}
 
-			if(!isPhoneValid($userPhoneField.val())){
+			if(!App.isPhoneValid($userPhoneField.val())){
 				$userPhoneField.addClass("field--error");
 				e.preventDefault();
 			} else {
@@ -256,35 +171,6 @@ $(document).ready(function(){
 			if(!$(".field").is(".field--error")){
 				// Происходит по успешной проверке
 			}
-		});
-	})();
-
-	
-
-	// Попап окно
-	(function(){
-		// Открытие попап окна
-		$(".js-open-popup").click(function(){
-			$(".modal").fadeIn();
-			$("html").addClass("popup-opened");
-			// Запись тарифа в скрытый инпут(если окно открывается после нажатия на тарифы)
-			if($(this).hasAttr("data-tariff")){
-				$("input[name='user_tariff']").val($(this).attr("data-tariff"));
-			}
-		});
-
-
-		// Закрытие попап окна
-		$(".modal__close").click(function(){
-			$("html").removeClass("popup-opened");
-			// Закрытие окна и очищение данных форм
-			$("input[name='user_tariff']").val("");
-			$(".modal").fadeOut();
-			$(".modal__field").val("");
-			$(".modal__form-group div").removeAttr("style");
-			$(".modal__field").removeClass("field--error");
-			$(".modal__submit-btn").text("Далее");
-			$(".modal__submit-btn").attr("data-is-last-field", "false");
 		});
 	})();
 
@@ -315,6 +201,19 @@ $(document).ready(function(){
 		});
 	}
 
+
+	//Появление стрелок работ при скролле страницы
+	var onWindowScrollShowArrows = function(){
+		var navList = document.querySelector(".nav__list");
+		var coordsY = navList.getBoundingClientRect().top;
+		var pageArrows = document.querySelectorAll(".page-nav");
+
+		if(coordsY - window.pageYOffset <= 0){
+			pageArrows.foreach(function(elem){
+				elem.classList.add("page-nav--visible");
+			});
+		}
+	}
 	
 
 });

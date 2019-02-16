@@ -743,10 +743,17 @@
 	/* Block - page-nav */
 	.page-nav--prev {
 		left: 0;
+		transform: translateX(-100%);
 	}
 
 	.page-nav--next {
 		right: 0;
+		transform: translateX(100%);
+	}
+
+	.page-nav--visible.page-nav--prev,
+	.page-nav--visible.page-nav--next {
+		transform: translateX(0);
 	}
 
 	/* Block - examples */

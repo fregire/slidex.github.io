@@ -1519,6 +1519,7 @@ html {
 }
 .content--project {
   text-align: center;
+  overflow: hidden;
 }
 .content h1 {
   margin-bottom: 5px;
@@ -1541,6 +1542,11 @@ html {
   -webkit-transform: translate(0, -50%);
       -ms-transform: translate(0, -50%);
           transform: translate(0, -50%);
+  -webkit-transition: -webkit-transform .4s;
+  transition: -webkit-transform .4s;
+  -o-transition: transform .4s;
+  transition: transform .4s;
+  transition: transform .4s, -webkit-transform .4s;
 }
 .page-nav--prev {
   left: 5%;

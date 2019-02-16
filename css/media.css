@@ -658,9 +658,21 @@
   /* Block - page-nav */
   .page-nav--prev {
     left: 0;
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
   .page-nav--next {
     right: 0;
+    -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  .page-nav--visible.page-nav--prev,
+  .page-nav--visible.page-nav--next {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
   }
   /* Block - examples */
   .examples__previews {
