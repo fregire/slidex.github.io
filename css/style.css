@@ -786,6 +786,9 @@ html {
 .steps__notification p {
   margin: 0;
 }
+.steps__notification-text br {
+  display: none;
+}
 /* Block - prices */
 .prices {
   padding: 0 0 60px;
@@ -1226,6 +1229,9 @@ html {
 .project__headline {
   margin: 0;
   font-size: 18px;
+}
+.project__headline br {
+  display: none;
 }
 .project__descr {
   max-width: 510px;
